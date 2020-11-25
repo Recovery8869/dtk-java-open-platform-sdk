@@ -31,6 +31,9 @@ class DtkApiClientTest {
         dtkGoodsListRequest.setRankType(7);
         // ...
         DtkApiResponse<List<DtkGetRankingListNewResponse>> execute = dtkClient.execute(dtkGoodsListRequest);
+        if (execute.isSuccess()) {
+            // 逻辑
+        }
     }
 
     @Test

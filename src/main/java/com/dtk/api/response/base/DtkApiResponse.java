@@ -26,6 +26,10 @@ public class DtkApiResponse<T> {
     public DtkApiResponse() {
     }
 
+    public boolean isSuccess() {
+        return this.code == 0;
+    }
+
     public DtkApiResponse(int code, String msg) {
         this.code = code;
         this.msg = msg;
