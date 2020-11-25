@@ -34,12 +34,10 @@ public class JsonUtil {
     }
 
     /**
-     * 对象转json
+     * 将对象转换成json字符串
      *
      * @param data data
      * @return String
-     * @方法名: objectToJson
-     * @描述: 将对象转换成json字符串
      */
     public static String objectToJson(Object data) {
         try {
@@ -56,7 +54,7 @@ public class JsonUtil {
      *
      * @param jsonData     json数据
      * @param valueTypeRef 对象中的object类型
-     * @return
+     * @return TypeReference实例化对象
      */
     public static <T> T jsonToPojoByTypeReference(String jsonData, TypeReference<T> valueTypeRef) throws JsonProcessingException {
         return MAPPER.readValue(jsonData, valueTypeRef);
@@ -73,7 +71,6 @@ public class JsonUtil {
         return null;
     }
 
-
     public static <T> T jsonToPojoByClass(String jsonData, Class<T> beanType) {
         try {
             return MAPPER.readValue(jsonData, beanType);
@@ -86,21 +83,21 @@ public class JsonUtil {
     }
 
     /**
-     * @param jsonData
-     * @param beanType
+     * 将json数据转换成pojo对象list
+     *
+     * @param jsonData jsonData
+     * @param beanType 数据元素类型
      * @return List<T>
-     * @方法名: jsonToList
-     * @描述: 将json数据转换成pojo对象list
      */
     public static <T> List<T> jsonToList(String jsonData, Class<T> beanType) {
         JavaType javaType = MAPPER.getTypeFactory().constructParametricType(List.class, beanType);
         try {
-            List<T> list = MAPPER.readValue(jsonData, javaType);
-            return list;
+            return MAPPER.readValue(jsonData, javaType);
         } catch (Exception e) {
             System.out.println("jsonData" + jsonData);
             log.error("json to list error", e);
         }
+
         return null;
     }
 }

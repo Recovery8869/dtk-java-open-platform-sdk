@@ -23,6 +23,12 @@ public class Assert {
         }
     }
 
+    public static void notTrue(boolean flag, DtkResultEnum dtkResultEnum) {
+        if (flag) {
+            throw new DtkApiException(dtkResultEnum);
+        }
+    }
+
     public static void notBank(String str, DtkResultEnum dtkResultEnum) {
         if (StringUtils.isBlank(str)) {
             throw new DtkApiException(dtkResultEnum);
