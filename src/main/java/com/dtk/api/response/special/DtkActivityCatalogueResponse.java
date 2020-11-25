@@ -1,7 +1,10 @@
 package com.dtk.api.response.special;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * 热门活动响应结果实体
@@ -16,9 +19,11 @@ public class DtkActivityCatalogueResponse {
     @ApiModelProperty(value = "活动名称")
     private String activityName;
     @ApiModelProperty(value = "活动开始时间")
-    private String startTime;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS", timezone = "GMT+8")
+    private Date startTime;
     @ApiModelProperty(value = "活动结束时间")
-    private String endTime;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS", timezone = "GMT+8")
+    private Date endTime;
     @ApiModelProperty(value = "单品标签图片")
     private String goodsLabel;
     @ApiModelProperty(value = "商详页标签图片")

@@ -1,5 +1,6 @@
 package com.dtk.api.response.special;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -14,5 +15,6 @@ import java.util.Date;
 @Data
 public class DtkPriceTrendHistoricalPriceResponse {
     private BigDecimal actualPrice;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS", timezone = "GMT+8")
     private Date date;
 }
