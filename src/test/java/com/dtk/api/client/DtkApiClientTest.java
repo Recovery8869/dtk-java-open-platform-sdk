@@ -1,5 +1,6 @@
 package com.dtk.api.client;
 
+import com.dtk.api.request.special.DtkActivityCatalogueRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.mastertool.DtkParseContentRequest;
 import com.dtk.api.request.putstorage.DtkGoodsListRequest;
@@ -7,6 +8,7 @@ import com.dtk.api.request.special.DtkGetRankingListRequest;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkParseContentResponse;
 import com.dtk.api.response.putstorage.DtkGoodsListItemResponse;
+import com.dtk.api.response.special.DtkActivityCatalogueResponse;
 import com.dtk.api.response.special.DtkGetRankingListNewResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -57,4 +59,16 @@ class DtkApiClientTest {
         // ...
         DtkApiResponse<DtkParseContentResponse> execute = dtkClient.execute(dtkParseContentRequest);
     }
+
+    @Test
+    void getActivityCatalogue() {
+        DtkActivityCatalogueRequest dtkActivityCatalogueRequest = new DtkActivityCatalogueRequest();
+        dtkActivityCatalogueRequest.setUrl("https://openapi.haojiequ.com/api/goods/activity/catalogue");
+        DtkClient dtkClient = DtkApiClient.getInstance("test", "test");
+        DtkApiResponse<List<DtkActivityCatalogueResponse>> execute = dtkClient.execute(dtkActivityCatalogueRequest);
+        if (execute.isSuccess()) {
+            System.out.println("success");
+        }
+    }
+
 }
