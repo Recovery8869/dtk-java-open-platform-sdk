@@ -9,7 +9,6 @@ import com.dtk.api.utils.Assert;
 import com.dtk.api.utils.JsonUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,6 +30,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public <T> T execute(DtkApiRequest<T> request) {
         String requestUrl = request.requestUrl();
         T tRsp;
@@ -49,13 +49,9 @@ public abstract class AbstractDtkApiClient implements DtkClient {
             tRsp = JsonUtil.jsonToPojoByTypeReference(resultJson, responseType);
         } catch (Exception ex) {
             log.error("dtk_sdk处理异常：请求地址：{}，请求参数：{}", requestUrl, JsonUtil.objectToJson(requestHolderWithSign));
-            if (StringUtils.isNotEmpty(resultJson)) {
-                log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
-            }
-
+            log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
             log.error("dtk_sdk处理异常：异常信息：", ex);
             if (ex instanceof DtkApiException) {
-                // 优化
                 DtkApiException exception = (DtkApiException) ex;
                 return (T) DtkApiResponse.buildFail(exception.getDtkResultEnum());
             } else {

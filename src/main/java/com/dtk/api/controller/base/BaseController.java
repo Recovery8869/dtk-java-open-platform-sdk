@@ -2,12 +2,12 @@ package com.dtk.api.controller.base;
 
 import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.client.DtkClient;
-import com.dtk.api.utils.Assert;
 import com.dtk.api.constant.DtkApiConstant;
 import com.dtk.api.exception.DtkResultEnum;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dtk.api.utils.Assert;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -18,11 +18,9 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Component
 public class BaseController {
-    @Autowired
+    @Resource
     private HttpServletRequest request;
     private DtkApiClient instance;
-    // private static final String DOMAIN = "https://openapi.haojiequ.com/java_op_test";
-    private static final String DOMAIN = "https://openapi.dataoke.com";
 
     protected DtkClient getDtkClient() {
         String appKey = getClientHeader(DtkApiConstant.RequestCommonParam.APP_KEY);
@@ -49,6 +47,6 @@ public class BaseController {
 
     protected String getRequestUrl() {
         String requestUrl = request.getRequestURI();
-        return String.format("%s%s", DOMAIN, requestUrl);
+        return String.format("%s%s", DtkApiConstant.Domain.PROD, requestUrl);
     }
 }

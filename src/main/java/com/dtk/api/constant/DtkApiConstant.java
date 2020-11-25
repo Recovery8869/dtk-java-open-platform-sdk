@@ -38,4 +38,8 @@ public class DtkApiConstant {
         public static final String VERSION = "version";
         public static final String URL = "url";
     }
+
+    public static class Domain {
+        public static final String PROD = "https://openapi.dataoke.com";
+    }
 }
