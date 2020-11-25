@@ -47,7 +47,7 @@ public class CategoryController extends BaseController {
 
     @GetMapping("get-tb-topic-list")
     @ApiOperation("官方活动推广API")
-    public DtkApiResponse<DtkGetTbTopicListResponse> getTbTopicList(DtkGetTbTopicListRequest dtkGetTbTopicListRequest) {
+    public DtkApiResponse<List<DtkGetTbTopicListResponse>> getTbTopicList(DtkGetTbTopicListRequest dtkGetTbTopicListRequest) {
         return getDtkClient().execute(dtkGetTbTopicListRequest.customUrl(getRequestUrl()));
     }
 }

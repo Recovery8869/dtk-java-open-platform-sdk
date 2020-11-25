@@ -25,7 +25,7 @@ public class DtkActivityGoodsListRequest extends DtkPageParamRequest implements 
     @ApiModelProperty(value = "版本号", example = "v1.2.3")
     private String version = "v1.2.2";
     @ApiModelProperty(value = "通过热门活动API获取的活动id", required = true)
-    private Integer activityId;
+    private Long activityId;
     @ApiModelProperty(value = "大淘客一级分类ID：1 -女装，2 -母婴，3 -美妆，4 -居家日用，5 -鞋品，6 -美食，7 -文娱车品，8 -数码家电，9 -男装，10 -内衣，11 -箱包，12 -配饰，13 -户外运动，14 -家装家纺")
     private String cid;
     @ApiModelProperty(value = "大淘客二级分类ID：可通过超级分类接口获取二级分类id，当同时传入一级分类id和二级分类id时，以一级分类id为准")

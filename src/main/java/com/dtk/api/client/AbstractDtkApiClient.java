@@ -1,6 +1,6 @@
 package com.dtk.api.client;
 
-import com.dtk.api.constant.*;
+import com.dtk.api.constant.DtkApiConstant;
 import com.dtk.api.exception.DtkApiException;
 import com.dtk.api.exception.DtkResultEnum;
 import com.dtk.api.http.HttpApiService;
@@ -48,7 +48,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
             TypeReference<T> responseType = request.responseType();
             tRsp = JsonUtil.jsonToPojoByTypeReference(resultJson, responseType);
         } catch (Exception ex) {
-            log.error("dtk_sdk处理异常：请求参数：{}", JsonUtil.objectToJson(requestHolderWithSign));
+            log.error("dtk_sdk处理异常：请求地址：{}，请求参数：{}", requestUrl, JsonUtil.objectToJson(requestHolderWithSign));
             if (StringUtils.isNotEmpty(resultJson)) {
                 log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
             }

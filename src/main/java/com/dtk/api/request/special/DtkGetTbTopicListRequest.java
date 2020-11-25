@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetTbTopicListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetTbTopicListResponse>> {
+public class DtkGetTbTopicListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetTbTopicListResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.2.0")
     private String version = "v1.2.0";
     @ApiModelProperty(value = "输出的端口类型：0-全部（默认），1-PC，2-无线")
@@ -39,8 +40,8 @@ public class DtkGetTbTopicListRequest extends DtkPageParamRequest implements Dtk
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkGetTbTopicListResponse>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkGetTbTopicListResponse>>() {
+    public TypeReference<DtkApiResponse<List<DtkGetTbTopicListResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<List<DtkGetTbTopicListResponse>>>() {
         };
     }
 

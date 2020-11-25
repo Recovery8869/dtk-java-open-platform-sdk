@@ -3,8 +3,6 @@ package com.dtk.api.response.special;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * 热门活动响应结果实体
  *
@@ -18,9 +16,9 @@ public class DtkActivityCatalogueResponse {
     @ApiModelProperty(value = "活动名称")
     private String activityName;
     @ApiModelProperty(value = "活动开始时间")
-    private Date startTime;
+    private String startTime;
     @ApiModelProperty(value = "活动结束时间")
-    private Date endTime;
+    private String endTime;
     @ApiModelProperty(value = "单品标签图片")
     private String goodsLabel;
     @ApiModelProperty(value = "商详页标签图片")
