@@ -57,6 +57,7 @@ public class HttpApiService {
      * @return result json
      */
     public static String doGet(String url) throws IOException {
+        log.info(url);
         // 声明 http get 请求
         HttpGet httpGet = new HttpGet(url);
         httpGet.setHeader("Accept-Encoding", "gzip");
