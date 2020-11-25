@@ -1,16 +1,19 @@
 package com.dtk.api.controller;
 
-import com.dtk.api.response.base.DtkApiResponse;
+import com.dtk.api.client.DtkClient;
 import com.dtk.api.controller.base.BaseController;
+import com.dtk.api.exception.DtkApiException;
+import com.dtk.api.exception.DtkResultEnum;
 import com.dtk.api.request.mastertool.DtkFirstOrderGiftMoneyRequest;
 import com.dtk.api.request.mastertool.DtkGetCollectionListRequest;
 import com.dtk.api.request.mastertool.DtkGetOwnerGoodsRequest;
-import com.dtk.api.request.putstorage.DtkGoodsListRequest;
 import com.dtk.api.request.putstorage.*;
 import com.dtk.api.request.search.DtkGetDtkSearchGoodsRequest;
 import com.dtk.api.request.search.DtkListSuperGoodsRequest;
 import com.dtk.api.request.search.DtkSearchSuggestionRequest;
 import com.dtk.api.request.special.*;
+import com.dtk.api.request.special.subranking.*;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkFirstOrderGiftMoneyResponse;
 import com.dtk.api.response.mastertool.DtkGetCollectionListItemResponse;
@@ -20,7 +23,9 @@ import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
 import com.dtk.api.response.search.DtkListSuperGoodsResponse;
 import com.dtk.api.response.search.DtkSearchSuggestionResponse;
 import com.dtk.api.response.special.*;
+import com.dtk.api.utils.Assert;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -105,8 +110,36 @@ public class GoodsController extends BaseController {
 
     @GetMapping("/get-ranking-list")
     @ApiOperation("各大榜单API")
-    public DtkApiResponse<List<DtkGetRankingListNewResponse>> getRankingList(DtkGetRankingListRequest dtkGetRankingListRequest) {
-        return getDtkClient().execute(dtkGetRankingListRequest.customUrl(getRequestUrl()));
+    public Object getRankingList(DtkGetRankingListRequest dtkGetRankingListRequest) {
+        Integer rankType = dtkGetRankingListRequest.getRankType();
+        Assert.notNull(rankType, DtkResultEnum.RANK_TYPE_ERROR);
+        DtkClient dtkClient = getDtkClient();
+        switch (rankType) {
+            case 1:
+            case 2:
+            case 3:
+                DtkGetRankingListByTimeWholeHotRequest dtkGetRankingListByTimeWholeHotRequest = new DtkGetRankingListByTimeWholeHotRequest();
+                BeanUtils.copyProperties(dtkGetRankingListRequest, dtkGetRankingListByTimeWholeHotRequest);
+                return dtkClient.execute(dtkGetRankingListByTimeWholeHotRequest.customUrl(getRequestUrl()));
+            case 4:
+                DtkGetRankingListByReBuyRequest dtkGetRankingListByReBuyRequest = new DtkGetRankingListByReBuyRequest();
+                BeanUtils.copyProperties(dtkGetRankingListRequest, dtkGetRankingListByReBuyRequest);
+                return dtkClient.execute(dtkGetRankingListByReBuyRequest.customUrl(getRequestUrl()));
+            case 5:
+                DtkGetRankingListByHotWordUpRequest dtkGetRankingListByHotWordUpRequest = new DtkGetRankingListByHotWordUpRequest();
+                BeanUtils.copyProperties(dtkGetRankingListRequest, dtkGetRankingListByHotWordUpRequest);
+                return dtkClient.execute(dtkGetRankingListByHotWordUpRequest.customUrl(getRequestUrl()));
+            case 6:
+                DtkGetRankingListByHotWordRequest dtkGetRankingListByHotWordRequest = new DtkGetRankingListByHotWordRequest();
+                BeanUtils.copyProperties(dtkGetRankingListRequest, dtkGetRankingListByHotWordRequest);
+                return dtkClient.execute(dtkGetRankingListByHotWordRequest.customUrl(getRequestUrl()));
+            case 7:
+                DtkGetRankingListByHotSearchRequest dtkGetRankingListByHotSearchRequest = new DtkGetRankingListByHotSearchRequest();
+                BeanUtils.copyProperties(dtkGetRankingListRequest, dtkGetRankingListByHotSearchRequest);
+                return dtkClient.execute(dtkGetRankingListByHotSearchRequest.customUrl(getRequestUrl()));
+            default:
+                throw new DtkApiException(DtkResultEnum.RANK_TYPE_ERROR);
+        }
     }
 
     @GetMapping("/list-similer-goods-by-open")

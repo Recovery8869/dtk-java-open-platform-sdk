@@ -9,7 +9,7 @@ import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkParseContentResponse;
 import com.dtk.api.response.putstorage.DtkGoodsListItemResponse;
 import com.dtk.api.response.special.DtkActivityCatalogueResponse;
-import com.dtk.api.response.special.DtkGetRankingListNewResponse;
+import com.dtk.api.response.special.DtkGetRankingListMergeResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,7 +32,7 @@ class DtkApiClientTest {
         dtkGoodsListRequest.setPageId("1");
         dtkGoodsListRequest.setRankType(7);
         // ...
-        DtkApiResponse<List<DtkGetRankingListNewResponse>> execute = dtkClient.execute(dtkGoodsListRequest);
+        DtkApiResponse<List<DtkGetRankingListMergeResponse>> execute = dtkClient.execute(dtkGoodsListRequest);
         if (execute.isSuccess()) {
             // 逻辑
         }

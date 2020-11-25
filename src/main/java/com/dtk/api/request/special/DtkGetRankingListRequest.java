@@ -1,12 +1,11 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
+import com.dtk.api.request.special.subranking.DtkGetRankingListBaseRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkPageParamRequest;
-import com.dtk.api.response.special.DtkGetRankingListNewResponse;
+import com.dtk.api.response.special.DtkGetRankingListMergeResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,21 +13,15 @@ import java.util.List;
 import java.util.TreeMap;
 
 /**
- * 各大榜单请求参数实体
+ * 各大榜单(包含所有榜单类型)请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:18
+ * @see com.dtk.api.request.special.subranking 建议以此包里的其它以byxxxRequest结尾对象进行查询操作
  */
 @Getter
 @Setter
-public class DtkGetRankingListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetRankingListNewResponse>>> {
-    @ApiModelProperty(value = "版本号", example = "v1.3.0")
-    private String version = "v1.3.0";
-    @ApiModelProperty(value = "榜单类型，1.实时榜 2.全天榜 3.热推榜 4.复购榜 5.热词飙升榜 6.热词排行榜 7.综合热搜榜", required = true)
-    private Integer rankType;
-    @ApiModelProperty(value = "大淘客一级类目id，仅对实时榜单、全天榜单有效")
-    private Integer cid;
-
+public class DtkGetRankingListRequest extends DtkGetRankingListBaseRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetRankingListMergeResponse>>> {
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
@@ -36,12 +29,12 @@ public class DtkGetRankingListRequest extends DtkPageParamRequest implements Dtk
 
     @Override
     public String apiVersion() {
-        return this.version;
+        return super.getVersion();
     }
 
     @Override
-    public TypeReference<DtkApiResponse<List<DtkGetRankingListNewResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<List<DtkGetRankingListNewResponse>>>() {
+    public TypeReference<DtkApiResponse<List<DtkGetRankingListMergeResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<List<DtkGetRankingListMergeResponse>>>() {
         };
     }
 

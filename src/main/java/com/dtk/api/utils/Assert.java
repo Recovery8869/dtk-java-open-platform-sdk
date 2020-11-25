@@ -17,6 +17,12 @@ public class Assert {
     private Assert() {
     }
 
+    public static void notNull(Object object, DtkResultEnum dtkResultEnum) {
+        if (object == null) {
+            throw new DtkApiException(dtkResultEnum);
+        }
+    }
+
     public static void notBank(String str, DtkResultEnum dtkResultEnum) {
         if (StringUtils.isBlank(str)) {
             throw new DtkApiException(dtkResultEnum);

@@ -1,4 +1,4 @@
-package com.dtk.api.response.special;
+package com.dtk.api.response.special.subranking;
 
 import lombok.Getter;
 import lombok.Setter;

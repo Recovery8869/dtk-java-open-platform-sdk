@@ -1,4 +1,4 @@
-package com.dtk.api.response.special;
+package com.dtk.api.response.special.subranking;
 
 import lombok.Data;
 
@@ -35,7 +35,6 @@ public class DtkRankingBaseResponse {
     private Integer activityType;
     private Integer shopType;
     private String couponConditions;
-    private Integer num;
     private String sellerId;
     private BigDecimal quanMLink;
     private BigDecimal hzQuanOver;
