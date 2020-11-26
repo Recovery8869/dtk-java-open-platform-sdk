@@ -49,7 +49,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
             tRsp = JsonUtil.jsonToPojoByTypeReference(resultJson, responseType);
         } catch (Exception ex) {
             log.error("dtk_sdk处理异常：请求地址：{}，请求参数：{}", requestUrl,
-                    requestHolderWithSign == null ? "null" : JsonUtil.objectToJson(requestHolderWithSign));
+                    requestHolderWithSign == null ? "null" : requestHolderWithSign.toString());
             log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
             log.error("dtk_sdk处理异常：异常信息：", ex);
             if (ex instanceof DtkApiException) {
