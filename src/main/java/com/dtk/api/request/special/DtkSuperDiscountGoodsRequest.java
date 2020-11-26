@@ -1,10 +1,10 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
-import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
+import com.dtk.api.response.special.DtkSuperDiscountGoodsResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkSuperDiscountGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>> {
+public class DtkSuperDiscountGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkSuperDiscountGoodsResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty(value = "大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”")
@@ -40,8 +40,8 @@ public class DtkSuperDiscountGoodsRequest extends DtkPageParamRequest implements
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkSuperDiscountGoodsResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkSuperDiscountGoodsResponse>>>() {
         };
     }
 

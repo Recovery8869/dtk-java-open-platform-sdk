@@ -210,7 +210,7 @@ public class GoodsController extends BaseController {
 
     @GetMapping("/super-discount-goods")
     @ApiOperation("折上折API")
-    public DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>> getSuperDiscount(DtkSuperDiscountGoodsRequest dtkSuperDiscountGoodsRequest) {
+    public DtkApiResponse<DtkPageResponse<DtkSuperDiscountGoodsResponse>> getSuperDiscount(DtkSuperDiscountGoodsRequest dtkSuperDiscountGoodsRequest) {
         return getDtkClient().execute(dtkSuperDiscountGoodsRequest.customUrl(getRequestUrl()));
     }
 
