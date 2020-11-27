@@ -20,6 +20,8 @@ public class DtkApiResponse<T> {
     private int code;
     @ApiModelProperty(value = "描述信息")
     private String msg;
+    @ApiModelProperty(value = "请求id")
+    private String requestId;
     @ApiModelProperty(value = "数据")
     private T data;
 
