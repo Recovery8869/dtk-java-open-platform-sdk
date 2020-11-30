@@ -1,10 +1,10 @@
 package com.dtk.api.controller;
 
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.controller.base.BaseController;
 import com.dtk.api.request.mastertool.*;
 import com.dtk.api.request.search.DtkGetTbServiceRequest;
 import com.dtk.api.request.special.DtkGetBrandListRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.*;
 import com.dtk.api.response.search.DtkGetTbServiceResponse;
 import com.dtk.api.response.special.DtkGetBrandListResponse;
@@ -27,7 +27,7 @@ public class TbServiceController extends BaseController {
 
     @GetMapping("/get-privilege-link")
     @ApiOperation("高效转链API")
-    public DtkApiResponse<DtkTwdToTwdResponse> getPrivilegeLink(DtkGetPrivilegeLinkRequest dtkGetPrivilegeLinkRequest) {
+    public DtkApiResponse<DtkGetPrivilegeLinkResponse> getPrivilegeLink(DtkGetPrivilegeLinkRequest dtkGetPrivilegeLinkRequest) {
         return getDtkClient().execute(dtkGetPrivilegeLinkRequest.customUrl(getRequestUrl()));
     }
 

@@ -29,6 +29,7 @@ public class DtkGetOrderDetailsResultsItemsResponse {
     private Integer tk_order_role;
     private String total_commission_fee;
     private Long pub_id;
+    private String pay_price;
     private String item_img;
     private String alimama_rate;
     private Long item_id;
@@ -53,8 +54,10 @@ public class DtkGetOrderDetailsResultsItemsResponse {
     private Long site_id;
     private String item_link;
     private String deposit_price;
+    private String is_lx;
     private String seller_nick;
     private String subsidy_fee;
     private String flow_source;
     private String tk_commission_pre_fee_for_media_platform;
+    private String tk_earning_time;
 }

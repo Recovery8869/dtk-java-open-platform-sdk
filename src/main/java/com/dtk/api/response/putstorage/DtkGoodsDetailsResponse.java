@@ -17,6 +17,8 @@ public class DtkGoodsDetailsResponse extends DtkGoodsListItemResponse {
     private String imgs;
     @ApiModelProperty(value = "相关商品图")
     private String reimgs;
+    @ApiModelProperty(value = "商品详情图")
+    private String detailPics;
     @ApiModelProperty(value = "该商品是否有细分类目：0不是，1是")
     private Integer isSubdivision;
     @ApiModelProperty(value = "该商品所属细分类目id")

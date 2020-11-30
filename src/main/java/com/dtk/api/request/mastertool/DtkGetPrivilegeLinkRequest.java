@@ -1,9 +1,9 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkUrlParamRequest;
-import com.dtk.api.response.mastertool.DtkTwdToTwdResponse;
+import com.dtk.api.response.base.DtkApiResponse;
+import com.dtk.api.response.mastertool.DtkGetPrivilegeLinkResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
@@ -20,7 +20,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkTwdToTwdResponse>> {
+public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetPrivilegeLinkResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.3.0")
     private String version = "v1.3.0";
     @ApiModelProperty(value = "淘宝商品id", required = true)
@@ -51,8 +51,8 @@ public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements Dt
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkTwdToTwdResponse>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkTwdToTwdResponse>>() {
+    public TypeReference<DtkApiResponse<DtkGetPrivilegeLinkResponse>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkGetPrivilegeLinkResponse>>() {
         };
     }
 
