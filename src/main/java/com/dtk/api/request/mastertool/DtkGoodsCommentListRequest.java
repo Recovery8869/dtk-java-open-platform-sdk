@@ -52,7 +52,7 @@ public class DtkGoodsCommentListRequest extends DtkUrlParamRequest implements Dt
     }
 
     @Override
-    public Object customUrl(String url) {
+    public DtkGoodsCommentListRequest customUrl(String url) {
         this.setUrl(url);
         return this;
     }

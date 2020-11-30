@@ -28,12 +28,12 @@ public class MediaVideoController extends BaseController {
     @GetMapping("/get-category-list")
     @ApiOperation("短视频商品分类API")
     public DtkApiResponse<List<DtkGetVideoGoodsCategoryResponse>> getVideoCategoryList(DtkGetVideoGoodsCategoryRequest dtkGetVideoGoodsCategoryRequest) {
-        return getDtkClient().execute(dtkGetVideoGoodsCategoryRequest);
+        return getDtkClient().execute(dtkGetVideoGoodsCategoryRequest.customUrl(getRequestUrl()));
     }
 
     @GetMapping("/get-goods-list")
     @ApiOperation("短视频商品API")
     public DtkApiResponse<DtkDiffPageResponse<DtkGetVideoGoodsListResponse>> getVideoList(DtkGetVideoGoodsListRequest dtkGetVideoGoodsListRequest) {
-        return getDtkClient().execute(dtkGetVideoGoodsListRequest);
+        return getDtkClient().execute(dtkGetVideoGoodsListRequest.customUrl(getRequestUrl()));
     }
 }

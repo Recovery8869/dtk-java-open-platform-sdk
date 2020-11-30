@@ -48,7 +48,7 @@ public class DtkGetBrandGoodsListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public Object customUrl(String url) {
+    public DtkGetBrandGoodsListRequest customUrl(String url) {
         this.setUrl(url);
         return this;
     }

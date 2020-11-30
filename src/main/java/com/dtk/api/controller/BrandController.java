@@ -25,12 +25,12 @@ public class BrandController extends BaseController {
     @GetMapping("/get-column-list")
     @ApiOperation("品牌栏目API")
     public DtkApiResponse<DtkDiffPageResponse<DtkGetColumnListResponse>> getColumnList(DtkGetColumnListRequest dtkGetColumnListRequest) {
-        return getDtkClient().execute(dtkGetColumnListRequest);
+        return getDtkClient().execute(dtkGetColumnListRequest.customUrl(getRequestUrl()));
     }
 
     @GetMapping("/get-goods-list")
-    @ApiOperation("单个品牌详情API")
+    @ApiOperation("品牌商品列表API")
     public DtkApiResponse<DtkGetBrandGoodsListResponse> getGoodsList(DtkGetBrandGoodsListRequest dtkGetBrandGoodsListRequest) {
-        return getDtkClient().execute(dtkGetBrandGoodsListRequest);
+        return getDtkClient().execute(dtkGetBrandGoodsListRequest.customUrl(getRequestUrl()));
     }
 }

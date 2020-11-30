@@ -49,7 +49,7 @@ public class DtkGetColumnListRequest extends DtkPageParamRequest implements DtkA
     }
 
     @Override
-    public Object customUrl(String url) {
+    public DtkGetColumnListRequest customUrl(String url) {
         this.setUrl(url);
         return this;
     }

@@ -49,7 +49,7 @@ public class DtkGetVideoGoodsListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public Object customUrl(String url) {
+    public DtkGetVideoGoodsListRequest customUrl(String url) {
         this.setUrl(url);
         return this;
     }

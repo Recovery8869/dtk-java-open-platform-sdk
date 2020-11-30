@@ -22,6 +22,6 @@ public class CommentController extends BaseController {
     @GetMapping("/get-comment-list")
     @ApiOperation("商品评论API")
     public DtkApiResponse<DtkGoodsCommentListResponse> getCommentList(DtkGoodsCommentListRequest dtkGoodsCommentListRequest) {
-        return getDtkClient().execute(dtkGoodsCommentListRequest);
+        return getDtkClient().execute(dtkGoodsCommentListRequest.customUrl(getRequestUrl()));
     }
 }

@@ -22,6 +22,6 @@ public class ShopController extends BaseController {
     @GetMapping("/convert")
     @ApiOperation("店铺转链API")
     public DtkApiResponse<DtkShopConvertResponse> getShopConvertInfo(DtkShopConvertRequest dtkShopConvertRequest) {
-        return getDtkClient().execute(dtkShopConvertRequest);
+        return getDtkClient().execute(dtkShopConvertRequest.customUrl(getRequestUrl()));
     }
 }

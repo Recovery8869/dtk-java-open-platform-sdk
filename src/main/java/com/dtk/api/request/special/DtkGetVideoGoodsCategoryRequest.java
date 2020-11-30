@@ -47,7 +47,7 @@ public class DtkGetVideoGoodsCategoryRequest extends DtkUrlParamRequest implemen
     }
 
     @Override
-    public Object customUrl(String url) {
+    public DtkGetVideoGoodsCategoryRequest customUrl(String url) {
         this.setUrl(url);
         return this;
     }
