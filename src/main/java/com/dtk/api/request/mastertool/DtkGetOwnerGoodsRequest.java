@@ -50,13 +50,13 @@ public class DtkGetOwnerGoodsRequest extends DtkPageParamRequest implements DtkA
     }
 
     @Override
-    public DtkGetOwnerGoodsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetOwnerGoodsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

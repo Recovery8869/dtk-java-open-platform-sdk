@@ -45,8 +45,8 @@ public class DtkListSuperGoodsRequest extends DtkPageParamRequest implements Dtk
     }
 
     @Override
-    public DtkListSuperGoodsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkListSuperGoodsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -63,6 +63,6 @@ public class DtkListSuperGoodsRequest extends DtkPageParamRequest implements Dtk
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

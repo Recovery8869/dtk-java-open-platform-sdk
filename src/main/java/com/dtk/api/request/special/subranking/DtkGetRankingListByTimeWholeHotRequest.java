@@ -38,13 +38,13 @@ public class DtkGetRankingListByTimeWholeHotRequest extends DtkGetRankingListBas
     }
 
     @Override
-    public DtkGetRankingListByTimeWholeHotRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetRankingListByTimeWholeHotRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

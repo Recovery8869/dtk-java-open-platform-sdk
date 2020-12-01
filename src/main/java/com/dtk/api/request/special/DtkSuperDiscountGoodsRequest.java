@@ -46,13 +46,13 @@ public class DtkSuperDiscountGoodsRequest extends DtkPageParamRequest implements
     }
 
     @Override
-    public DtkSuperDiscountGoodsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkSuperDiscountGoodsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

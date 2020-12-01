@@ -46,7 +46,7 @@ class GoodsControllerTest {
     void getGoodsList() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGoodsListRequest request = new DtkGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-goods-list");
         request.setVersion("v1.2.4");
         request.setPageId("1");
         request.setPageSize(20);
@@ -80,7 +80,7 @@ class GoodsControllerTest {
     void getGoodsInfo() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkPullGoodsByTimeRequest request = new DtkPullGoodsByTimeRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/pull-goods-by-time");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/pull-goods-by-time");
         request.setVersion("v1.2.3");
         request.setPageId("1");
         request.setPageSize(20);
@@ -101,7 +101,7 @@ class GoodsControllerTest {
     void getNewestGoodsList() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkNewestGoodsRequest request = new DtkNewestGoodsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-newest-goods");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-newest-goods");
         request.setVersion("v1.2.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -134,7 +134,7 @@ class GoodsControllerTest {
     void getGoodsDetails() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGoodsDetailsRequest request = new DtkGoodsDetailsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-goods-details");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-goods-details");
         request.setVersion("v1.2.3");
         request.setId(30711757);
         request.setGoodsId("123");
@@ -148,7 +148,7 @@ class GoodsControllerTest {
     void getStaleGoodsByTime() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkStaleGoodsByTimeRequest request = new DtkStaleGoodsByTimeRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-stale-goods-by-time");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-stale-goods-by-time");
         request.setVersion("v1.0.1");
         request.setPageId("1");
         request.setPageSize(50);
@@ -164,7 +164,7 @@ class GoodsControllerTest {
     void getOwnerGoods() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetOwnerGoodsRequest request = new DtkGetOwnerGoodsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-owner-goods");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-owner-goods");
         request.setVersion("v1.0.1");
         request.setPageId("1");
         request.setPageSize(20);
@@ -182,7 +182,7 @@ class GoodsControllerTest {
     void getCollectionList() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetCollectionListRequest request = new DtkGetCollectionListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-collection-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-collection-list");
         request.setVersion("v1.0.1");
         request.setPageId("1");
         request.setPageSize(20);
@@ -199,7 +199,7 @@ class GoodsControllerTest {
     void getDtkGoodsSearchGoods() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetDtkSearchGoodsRequest request = new DtkGetDtkSearchGoodsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-dtk-search-goods");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-dtk-search-goods");
         request.setVersion("v2.1.2");
         request.setPageId("1");
         request.setPageSize(20);
@@ -231,7 +231,7 @@ class GoodsControllerTest {
     void searchSuggestion() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkSearchSuggestionRequest request = new DtkSearchSuggestionRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/search-suggestion");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/search-suggestion");
         request.setVersion("v1.0.2");
         request.setKeyWords("口罩");
         request.setType(1);
@@ -245,7 +245,7 @@ class GoodsControllerTest {
     void getOpApiNineGoodsList() {
         DtkClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkOpGoodsListRequest request = new DtkOpGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/nine/op-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/nine/op-goods-list");
         request.setVersion("v2.0.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -261,7 +261,7 @@ class GoodsControllerTest {
         // 整合版本
         DtkClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkGetRankingListRequest request = new DtkGetRankingListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request.setVersion("v1.3.0");
         request.setCid(5);
         request.setPageId("1");
@@ -275,7 +275,7 @@ class GoodsControllerTest {
         // 区分版本
         // 1,2,3
         DtkGetRankingListByTimeWholeHotRequest request1 = new DtkGetRankingListByTimeWholeHotRequest();
-        request1.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request1.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request1.setVersion("v1.3.0");
         request.setCid(5);
         request1.setPageId("1");
@@ -287,7 +287,7 @@ class GoodsControllerTest {
         }
         //4
         DtkGetRankingListByReBuyRequest request2 = new DtkGetRankingListByReBuyRequest();
-        request2.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request2.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request2.setVersion("v1.3.0");
         request2.setCid(5);
         request2.setPageId("1");
@@ -299,7 +299,7 @@ class GoodsControllerTest {
         }
         //5
         DtkGetRankingListByHotWordUpRequest request3 = new DtkGetRankingListByHotWordUpRequest();
-        request3.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request3.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request3.setVersion("v1.3.0");
         request3.setCid(5);
         request3.setPageId("1");
@@ -311,7 +311,7 @@ class GoodsControllerTest {
         }
         //6
         DtkGetRankingListByHotWordRequest request4 = new DtkGetRankingListByHotWordRequest();
-        request4.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request4.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request4.setVersion("v1.3.0");
         request4.setCid(5);
         request4.setPageId("1");
@@ -323,7 +323,7 @@ class GoodsControllerTest {
         }
         //7
         DtkGetRankingListByHotSearchRequest request5 = new DtkGetRankingListByHotSearchRequest();
-        request5.setUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
+        request5.setRequestUrl("https://openapi.dataoke.com/api/goods/get-ranking-list");
         request5.setVersion("v1.3.0");
         request5.setCid(5);
         request5.setPageId("1");
@@ -339,7 +339,7 @@ class GoodsControllerTest {
     void listSimilerGoods() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkListSimilerGoodsByOpenRequest request = new DtkListSimilerGoodsByOpenRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/list-similer-goods-by-open");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/list-similer-goods-by-open");
         request.setVersion("v1.2.2");
         request.setId("1");
         request.setSize(10);
@@ -353,7 +353,7 @@ class GoodsControllerTest {
     void topicCatalogue() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkCatalogueRequest request = new DtkCatalogueRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/topic/catalogue");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/topic/catalogue");
         request.setVersion("v1.1.0");
         DtkApiResponse<List<DtkCatalogueResponse>> execute = client.execute(request);
         if (execute.isSuccess()) {
@@ -365,7 +365,7 @@ class GoodsControllerTest {
     void topicList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkTopicGoodsListRequest request = new DtkTopicGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/topic/goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/topic/goods-list");
         request.setVersion("v1.1.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -380,7 +380,7 @@ class GoodsControllerTest {
     void activityCatalogue() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkActivityCatalogueRequest request = new DtkActivityCatalogueRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/activity/catalogue");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/activity/catalogue");
         request.setVersion("v1.1.0");
         DtkApiResponse<List<DtkActivityCatalogueResponse>> execute = client.execute(request);
         if (execute.isSuccess()) {
@@ -392,7 +392,7 @@ class GoodsControllerTest {
     void activityGoodsList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkActivityGoodsListRequest request = new DtkActivityGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/activity/goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/activity/goods-list");
         request.setVersion("v1.2.2");
         request.setPageId("1");
         request.setPageSize(20);
@@ -410,7 +410,7 @@ class GoodsControllerTest {
     void friendsCircleList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkFriendsCircleListRequest request = new DtkFriendsCircleListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/friends-circle-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/friends-circle-list");
         request.setVersion("v1.3.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -430,7 +430,7 @@ class GoodsControllerTest {
     void firstOrderGiftMoneyGoods() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkFirstOrderGiftMoneyRequest request = new DtkFirstOrderGiftMoneyRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/first-order-gift-money");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/first-order-gift-money");
         request.setVersion("v1.1.0");
         request.setPageId("1");
         request.setPageSize(10);
@@ -448,7 +448,7 @@ class GoodsControllerTest {
     void exclusiveGoodsList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkExclusiveGoodsListRequest request = new DtkExclusiveGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/exclusive-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/exclusive-goods-list");
         request.setVersion("v1.0.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -464,7 +464,7 @@ class GoodsControllerTest {
     void explosiveGoods() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkExplosiveGoodsListRequest request = new DtkExplosiveGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/explosive-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/explosive-goods-list");
         request.setVersion("v1.0.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -480,7 +480,7 @@ class GoodsControllerTest {
     void liveMaterialGoods() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkLiveMaterialGoodsListRequest request = new DtkLiveMaterialGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/liveMaterial-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/liveMaterial-goods-list");
         request.setVersion("v1.0.0");
         request.setDate("2020-09-16");
         request.setSort("0");
@@ -494,7 +494,7 @@ class GoodsControllerTest {
     void priceTrend() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkPriceTrendRequest request = new DtkPriceTrendRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/price-trend");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/price-trend");
         request.setVersion("v1.0.0");
         request.setId("xx");
         request.setGoodsId("xx");
@@ -508,7 +508,7 @@ class GoodsControllerTest {
     void getSuperDiscount() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkSuperDiscountGoodsRequest request = new DtkSuperDiscountGoodsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/super-discount-goods");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/super-discount-goods");
         request.setVersion("v1.0.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -524,7 +524,7 @@ class GoodsControllerTest {
     void getHalfPriceDay() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkGetHalfPriceDayRequest request = new DtkGetHalfPriceDayRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/get-half-price-day");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/get-half-price-day");
         request.setVersion("v1.0.0");
         request.setSessions("16");
         DtkApiResponse<DtkGetHalfPriceDayResponse> execute = client.execute(request);
@@ -537,7 +537,7 @@ class GoodsControllerTest {
     void jdOneDollarPurchase() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkJdOneDollarPurchaseRequest request = new DtkJdOneDollarPurchaseRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/jd-one-dollar-purchase");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/jd-one-dollar-purchase");
         request.setVersion("v1.0.0");
         request.setPageId("1");
         request.setPageSize(20);
@@ -553,7 +553,7 @@ class GoodsControllerTest {
     void listSuperGoods() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkListSuperGoodsRequest request = new DtkListSuperGoodsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/goods/list-super-goods");
+        request.setRequestUrl("https://openapi.dataoke.com/api/goods/list-super-goods");
         request.setVersion("v1.3.0");
         request.setPageId("1");
         request.setPageSize(20);

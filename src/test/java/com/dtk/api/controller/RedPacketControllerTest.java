@@ -23,7 +23,7 @@ class RedPacketControllerTest {
     void mergeRedEnvelopes() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkMergeRedEnvelopesRequest request = new DtkMergeRedEnvelopesRequest();
-        request.setUrl("https://openapi.dataoke.com/api/dels/merge-red-envelopes");
+        request.setRequestUrl("https://openapi.dataoke.com/api/dels/merge-red-envelopes");
         request.setVersion("v1.0.0");
         request.setMerchantType(1);
         request.setPid("123123");

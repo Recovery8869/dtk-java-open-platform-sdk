@@ -40,8 +40,8 @@ public class DtkTwdToTwdRequest extends DtkUrlParamRequest implements DtkApiRequ
     }
 
     @Override
-    public DtkTwdToTwdRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkTwdToTwdRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -58,6 +58,6 @@ public class DtkTwdToTwdRequest extends DtkUrlParamRequest implements DtkApiRequ
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

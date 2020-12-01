@@ -68,8 +68,8 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public DtkGetDtkSearchGoodsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetDtkSearchGoodsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -86,6 +86,6 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

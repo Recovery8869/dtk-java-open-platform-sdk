@@ -46,13 +46,13 @@ public class DtkJdOneDollarPurchaseRequest extends DtkPageParamRequest implement
     }
 
     @Override
-    public DtkJdOneDollarPurchaseRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkJdOneDollarPurchaseRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -44,8 +44,8 @@ public class DtkActivityGoodsListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public DtkActivityGoodsListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkActivityGoodsListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -57,6 +57,6 @@ public class DtkActivityGoodsListRequest extends DtkPageParamRequest implements 
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

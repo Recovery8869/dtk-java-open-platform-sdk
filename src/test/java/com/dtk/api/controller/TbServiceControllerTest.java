@@ -29,7 +29,7 @@ class TbServiceControllerTest {
     void getPrivilegeLink() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetPrivilegeLinkRequest request = new DtkGetPrivilegeLinkRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/get-privilege-link");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/get-privilege-link");
         request.setVersion("v1.3.1");
         request.setGoodsId("627769190428");
         request.setCouponId("xxx");
@@ -49,7 +49,7 @@ class TbServiceControllerTest {
     void getTbService() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetTbServiceRequest request = new DtkGetTbServiceRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/get-tb-service");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/get-tb-service");
         request.setVersion("v2.1.0");
         request.setPageNo(1L);
         request.setPageSize(20L);
@@ -74,7 +74,7 @@ class TbServiceControllerTest {
     void getBrandList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkGetBrandListRequest request = new DtkGetBrandListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/get-brand-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/get-brand-list");
         request.setVersion("v1.1.2");
         request.setPageId("1");
         request.setPageSize(20);
@@ -88,7 +88,7 @@ class TbServiceControllerTest {
     void getOrderDetails() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetOrderDetailsRequest request = new DtkGetOrderDetailsRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/get-order-details");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/get-order-details");
         request.setVersion("v1.0.0");
         request.setPageNo(1);
         request.setPageSize(20);
@@ -110,12 +110,12 @@ class TbServiceControllerTest {
     void creatTpwd() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkCreatTaokoulingRequest request = new DtkCreatTaokoulingRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/creat-taokouling");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/creat-taokouling");
         request.setVersion("v1.0.0");
         request.setText("test");
         request.setUrl("https://uland.taobao.com/");
-        request.setUserId("xx");
-        request.setLogo("xxx");
+        // request.setUserId("xx");
+        // request.setLogo("xxx");
         DtkApiResponse<DtkCreatTaokoulingResponse> execute = client.execute(request);
         if (execute.isSuccess()) {
             // 业务逻辑
@@ -126,7 +126,7 @@ class TbServiceControllerTest {
     void activityLink() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkActivityLinkRequest request = new DtkActivityLinkRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/activity-link");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/activity-link");
         request.setVersion("v1.0.0");
         request.setPid("123_123_123_123");
         request.setPromotionSceneId("20150318020000462");
@@ -142,7 +142,7 @@ class TbServiceControllerTest {
     void twdTotwd() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkTwdToTwdRequest request = new DtkTwdToTwdRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/twd-to-twd");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/twd-to-twd");
         request.setVersion("v1.0.0");
         request.setContent("1332233");
         request.setPid("1332233");
@@ -159,7 +159,7 @@ class TbServiceControllerTest {
     void parseContent() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkParseContentRequest request = new DtkParseContentRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/parse-content");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/parse-content");
         request.setVersion("v1.0.0");
         request.setContent("test");
         DtkApiResponse<DtkParseContentResponse> execute = client.execute(request);
@@ -172,7 +172,7 @@ class TbServiceControllerTest {
     void parseTaoKouLing() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkParseTaokoulingRequest request = new DtkParseTaokoulingRequest();
-        request.setUrl("https://openapi.dataoke.com/api/tb-service/parse-taokouling");
+        request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/parse-taokouling");
         request.setVersion("v1.0.0");
         request.setContent("xxx");
         DtkApiResponse<DtkParseContentResponse> execute = client.execute(request);

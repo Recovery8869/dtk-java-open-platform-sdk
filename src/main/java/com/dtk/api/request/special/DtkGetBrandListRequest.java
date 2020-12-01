@@ -42,13 +42,13 @@ public class DtkGetBrandListRequest extends DtkPageParamRequest implements DtkAp
     }
 
     @Override
-    public DtkGetBrandListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetBrandListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

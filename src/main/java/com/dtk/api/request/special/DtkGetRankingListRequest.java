@@ -39,13 +39,13 @@ public class DtkGetRankingListRequest extends DtkGetRankingListBaseRequest imple
     }
 
     @Override
-    public DtkGetRankingListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetRankingListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

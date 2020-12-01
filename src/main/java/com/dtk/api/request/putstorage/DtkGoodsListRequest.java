@@ -84,13 +84,13 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     }
 
     @Override
-    public DtkGoodsListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGoodsListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -28,7 +28,7 @@ class MediaVideoControllerTest {
     void getVideoCategoryList() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetVideoGoodsCategoryRequest request = new DtkGetVideoGoodsCategoryRequest();
-        request.setUrl("https://openapi.dataoke.com/api/delanys/media/video/get-category-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/delanys/media/video/get-category-list");
         request.setVersion("v1.0.0");
         DtkApiResponse<List<DtkGetVideoGoodsCategoryResponse>> execute = client.execute(request);
         if (execute.isSuccess()) {
@@ -40,7 +40,7 @@ class MediaVideoControllerTest {
     void getVideoList() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGetVideoGoodsListRequest request = new DtkGetVideoGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/delanys/media/video/get-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/delanys/media/video/get-goods-list");
         request.setVersion("v1.0.0");
         request.setCid(15);
         request.setPageId("1");

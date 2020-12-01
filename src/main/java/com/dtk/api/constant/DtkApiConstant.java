@@ -35,8 +35,7 @@ public class DtkApiConstant {
         public static final String SIGN = "sign";
         public static final String APP_KEY = "appKey";
         public static final String APP_SECRET = "appSecret";
-        public static final String VERSION = "version";
-        public static final String URL = "url";
+        public static final String REQUEST_URL = "requestUrl";
     }
 
     public static class Domain {

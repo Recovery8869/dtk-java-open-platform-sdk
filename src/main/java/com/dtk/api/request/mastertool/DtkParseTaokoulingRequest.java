@@ -33,8 +33,8 @@ public class DtkParseTaokoulingRequest extends DtkUrlParamRequest implements Dtk
     }
 
     @Override
-    public DtkParseTaokoulingRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkParseTaokoulingRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -51,6 +51,6 @@ public class DtkParseTaokoulingRequest extends DtkUrlParamRequest implements Dtk
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

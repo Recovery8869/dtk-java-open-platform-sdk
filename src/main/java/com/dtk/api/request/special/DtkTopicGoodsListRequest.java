@@ -44,13 +44,13 @@ public class DtkTopicGoodsListRequest extends DtkPageParamRequest implements Dtk
     }
 
     @Override
-    public DtkTopicGoodsListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkTopicGoodsListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

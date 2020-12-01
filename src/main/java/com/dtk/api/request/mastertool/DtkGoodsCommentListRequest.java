@@ -48,12 +48,12 @@ public class DtkGoodsCommentListRequest extends DtkUrlParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 
     @Override
-    public DtkGoodsCommentListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGoodsCommentListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 }

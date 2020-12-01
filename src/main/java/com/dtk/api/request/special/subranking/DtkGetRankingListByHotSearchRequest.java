@@ -37,13 +37,13 @@ public class DtkGetRankingListByHotSearchRequest extends DtkGetRankingListBaseRe
     }
 
     @Override
-    public DtkGetRankingListByHotSearchRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetRankingListByHotSearchRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -36,8 +36,8 @@ public class DtkMergeRedEnvelopesRequest extends DtkUrlParamRequest implements D
     }
 
     @Override
-    public DtkMergeRedEnvelopesRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkMergeRedEnvelopesRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -54,6 +54,6 @@ public class DtkMergeRedEnvelopesRequest extends DtkUrlParamRequest implements D
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

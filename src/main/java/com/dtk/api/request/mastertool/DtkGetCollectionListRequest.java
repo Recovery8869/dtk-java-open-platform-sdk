@@ -49,13 +49,13 @@ public class DtkGetCollectionListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public DtkGetCollectionListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetCollectionListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

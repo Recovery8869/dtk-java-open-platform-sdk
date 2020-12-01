@@ -1,8 +1,8 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkUrlParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkGetOrderDetailsResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -51,8 +51,8 @@ public class DtkGetOrderDetailsRequest extends DtkUrlParamRequest implements Dtk
     }
 
     @Override
-    public DtkGetOrderDetailsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetOrderDetailsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -69,6 +69,6 @@ public class DtkGetOrderDetailsRequest extends DtkUrlParamRequest implements Dtk
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

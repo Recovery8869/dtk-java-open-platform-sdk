@@ -1,8 +1,8 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkUrlParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkCreatTaokoulingResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -45,8 +45,8 @@ public class DtkCreatTaokoulingRequest extends DtkUrlParamRequest implements Dtk
     }
 
     @Override
-    public DtkCreatTaokoulingRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkCreatTaokoulingRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -57,6 +57,6 @@ public class DtkCreatTaokoulingRequest extends DtkUrlParamRequest implements Dtk
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

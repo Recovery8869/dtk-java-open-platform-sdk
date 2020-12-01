@@ -45,12 +45,12 @@ public class DtkGetVideoGoodsListRequest extends DtkPageParamRequest implements 
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 
     @Override
-    public DtkGetVideoGoodsListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetVideoGoodsListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 }

@@ -23,7 +23,7 @@ class SubdivisionControllerTest {
     void getRankList() {
         DtkClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
         DtkGetRankListRequest request = new DtkGetRankListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/subdivision/get-rank-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/subdivision/get-rank-list");
         request.setVersion("v1.0.0");
         request.setSubdivisionId("xx");
         DtkApiResponse<List<DtkGetDtkSearchGoodsResponse>> execute = client.execute(request);

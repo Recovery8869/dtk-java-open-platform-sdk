@@ -45,8 +45,8 @@ public class DtkPullGoodsByTimeRequest extends DtkPageParamRequest implements Dt
     }
 
     @Override
-    public DtkPullGoodsByTimeRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkPullGoodsByTimeRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -63,6 +63,6 @@ public class DtkPullGoodsByTimeRequest extends DtkPageParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

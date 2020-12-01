@@ -35,8 +35,8 @@ public class DtkGoodsDetailsRequest extends DtkUrlParamRequest implements DtkApi
     }
 
     @Override
-    public DtkGoodsDetailsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGoodsDetailsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -52,6 +52,6 @@ public class DtkGoodsDetailsRequest extends DtkUrlParamRequest implements DtkApi
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

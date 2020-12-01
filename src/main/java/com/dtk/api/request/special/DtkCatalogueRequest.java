@@ -42,13 +42,13 @@ public class DtkCatalogueRequest extends DtkUrlParamRequest implements DtkApiReq
     }
 
     @Override
-    public DtkCatalogueRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkCatalogueRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -46,13 +46,13 @@ public class DtkLiveMaterialGoodsListRequest extends DtkUrlParamRequest implemen
     }
 
     @Override
-    public DtkLiveMaterialGoodsListRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkLiveMaterialGoodsListRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

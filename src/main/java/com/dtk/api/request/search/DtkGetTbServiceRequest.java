@@ -52,8 +52,8 @@ public class DtkGetTbServiceRequest extends DtkUrlParamRequest implements DtkApi
     private String channelId;
 
     @Override
-    public DtkGetTbServiceRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetTbServiceRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -75,6 +75,6 @@ public class DtkGetTbServiceRequest extends DtkUrlParamRequest implements DtkApi
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

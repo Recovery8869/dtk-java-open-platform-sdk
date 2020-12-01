@@ -49,13 +49,13 @@ public class DtkFirstOrderGiftMoneyRequest extends DtkPageParamRequest implement
     }
 
     @Override
-    public DtkFirstOrderGiftMoneyRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkFirstOrderGiftMoneyRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

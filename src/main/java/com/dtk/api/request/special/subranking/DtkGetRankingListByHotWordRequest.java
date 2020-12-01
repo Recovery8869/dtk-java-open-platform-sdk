@@ -37,13 +37,13 @@ public class DtkGetRankingListByHotWordRequest extends DtkGetRankingListBaseRequ
     }
 
     @Override
-    public DtkGetRankingListByHotWordRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetRankingListByHotWordRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -15,5 +15,5 @@ import lombok.Setter;
 @Setter
 public class DtkUrlParamRequest {
     @ApiModelProperty(value = "请求地址", hidden = true)
-    private String url;
+    private String requestUrl;
 }

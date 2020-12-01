@@ -35,8 +35,8 @@ public class DtkStaleGoodsByTimeRequest extends DtkPageParamRequest implements D
     }
 
     @Override
-    public DtkStaleGoodsByTimeRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkStaleGoodsByTimeRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -53,6 +53,6 @@ public class DtkStaleGoodsByTimeRequest extends DtkPageParamRequest implements D
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

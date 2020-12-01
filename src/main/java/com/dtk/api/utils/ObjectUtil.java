@@ -17,7 +17,7 @@ public class ObjectUtil {
     private static final Set<String> EXCLUDE_FIELDS = new HashSet<>();
 
     static {
-        EXCLUDE_FIELDS.add(DtkApiConstant.RequestCommonParam.URL);
+        EXCLUDE_FIELDS.add(DtkApiConstant.RequestCommonParam.REQUEST_URL);
     }
 
     private ObjectUtil() {

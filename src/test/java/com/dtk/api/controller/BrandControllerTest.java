@@ -23,7 +23,7 @@ class BrandControllerTest {
     void getColumnList() {
         DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
         DtkGetColumnListRequest request = new DtkGetColumnListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/delanys/brand/get-column-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/delanys/brand/get-column-list");
         request.setVersion("v1.0.0");
         request.setCid(6);
         request.setPageId("1");
@@ -38,7 +38,7 @@ class BrandControllerTest {
     void getGoodsList() {
         DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
         DtkGetBrandGoodsListRequest request = new DtkGetBrandGoodsListRequest();
-        request.setUrl("https://openapi.dataoke.com/api/delanys/brand/get-goods-list");
+        request.setRequestUrl("https://openapi.dataoke.com/api/delanys/brand/get-goods-list");
         request.setVersion("v1.0.0");
         request.setBrandId("7625988");
         request.setPageId("1");

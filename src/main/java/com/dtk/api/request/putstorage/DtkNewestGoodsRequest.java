@@ -65,8 +65,8 @@ public class DtkNewestGoodsRequest extends DtkPageParamRequest implements DtkApi
     private String sort;
 
     @Override
-    public DtkNewestGoodsRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkNewestGoodsRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -88,6 +88,6 @@ public class DtkNewestGoodsRequest extends DtkPageParamRequest implements DtkApi
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

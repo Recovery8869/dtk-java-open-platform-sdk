@@ -57,13 +57,13 @@ public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements Dt
     }
 
     @Override
-    public DtkGetPrivilegeLinkRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetPrivilegeLinkRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

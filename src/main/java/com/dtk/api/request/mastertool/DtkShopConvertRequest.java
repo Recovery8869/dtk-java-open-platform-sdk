@@ -50,12 +50,12 @@ public class DtkShopConvertRequest extends DtkUrlParamRequest implements DtkApiR
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 
     @Override
-    public DtkShopConvertRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkShopConvertRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 }

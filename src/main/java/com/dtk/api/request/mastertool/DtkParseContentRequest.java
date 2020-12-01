@@ -33,8 +33,8 @@ public class DtkParseContentRequest extends DtkUrlParamRequest implements DtkApi
     }
 
     @Override
-    public DtkParseContentRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkParseContentRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -51,6 +51,6 @@ public class DtkParseContentRequest extends DtkUrlParamRequest implements DtkApi
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

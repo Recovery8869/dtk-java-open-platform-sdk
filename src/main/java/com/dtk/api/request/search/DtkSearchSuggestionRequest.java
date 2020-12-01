@@ -35,8 +35,8 @@ public class DtkSearchSuggestionRequest extends DtkUrlParamRequest implements Dt
     }
 
     @Override
-    public DtkSearchSuggestionRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkSearchSuggestionRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -53,6 +53,6 @@ public class DtkSearchSuggestionRequest extends DtkUrlParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

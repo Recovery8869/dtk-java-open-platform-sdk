@@ -41,13 +41,13 @@ public class DtkGetTop100Request extends DtkUrlParamRequest implements DtkApiReq
     }
 
     @Override
-    public DtkGetTop100Request customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetTop100Request customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

@@ -36,8 +36,8 @@ public class DtkActivityCatalogueRequest extends DtkUrlParamRequest implements D
     }
 
     @Override
-    public DtkActivityCatalogueRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkActivityCatalogueRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
@@ -49,6 +49,6 @@ public class DtkActivityCatalogueRequest extends DtkUrlParamRequest implements D
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

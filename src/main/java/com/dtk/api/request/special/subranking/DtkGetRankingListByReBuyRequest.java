@@ -37,13 +37,13 @@ public class DtkGetRankingListByReBuyRequest extends DtkGetRankingListBaseReques
     }
 
     @Override
-    public DtkGetRankingListByReBuyRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkGetRankingListByReBuyRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }

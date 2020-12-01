@@ -46,13 +46,13 @@ public class DtkListSimilerGoodsByOpenRequest extends DtkUrlParamRequest impleme
     }
 
     @Override
-    public DtkListSimilerGoodsByOpenRequest customUrl(String url) {
-        this.setUrl(url);
+    public DtkListSimilerGoodsByOpenRequest customUrl(String requestUrl) {
+        this.setRequestUrl(requestUrl);
         return this;
     }
 
     @Override
     public String requestUrl() {
-        return this.getUrl();
+        return this.getRequestUrl();
     }
 }
