@@ -1,5 +1,6 @@
 package com.dtk.api.response.mastertool;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ public class DtkShopConvertResponse {
     private String shopLinks;
 
     @ApiModelProperty(value = "淘口令")
+    @JsonProperty("Tpwd")
     private String Tpwd;
 
     @ApiModelProperty(value = "长口令")

@@ -1,5 +1,6 @@
 package com.dtk.api.response.mastertool;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 public class DtkMergeRedEnvelopesResponse {
     private String link;
+    @JsonProperty("Tpwd")
     private String Tpwd;
     private String longTpwd;
     private String shortURL;

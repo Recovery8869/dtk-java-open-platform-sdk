@@ -129,7 +129,7 @@ class TbServiceControllerTest {
         request.setUrl("https://openapi.dataoke.com/api/tb-service/activity-link");
         request.setVersion("v1.0.0");
         request.setPid("123_123_123_123");
-        request.setPromotionSceneId("123");
+        request.setPromotionSceneId("20150318020000462");
         request.setRelationId("123");
         request.setUnionId("123");
         DtkApiResponse<DtkActivityLinkResponse> execute = client.execute(request);
