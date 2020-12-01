@@ -16,12 +16,30 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class HttpClientConfig {
-    private static final Integer maxTotal = 200;
-    private static final Integer defaultMaxPerRoute = 200;
-    private static final Integer connectTimeout = 5000;
-    private static final Integer connectionRequestTimeout = 5000;
-    private static final Integer socketTimeout = 10000;
-    private static final boolean staleConnectionCheckEnabled = true;
+    /**
+     * 最大连接数
+     */
+    private static final Integer MAX_TOTAL = 200;
+    /**
+     * 每个路由最大连接
+     */
+    private static final Integer DEFAULT_MAX_PER_ROUTE = 200;
+    /**
+     * 连接超时 5秒
+     */
+    private static final Integer CONNECT_TIMEOUT = 5000;
+    /**
+     * 从 httpclient 资源池获取httpclient 最多等待5000毫秒
+     */
+    private static final Integer CONNECTION_REQUEST_TIMEOUT = 5000;
+    /**
+     * 读取超时 10秒
+     */
+    private static final Integer SOCKET_TIMEOUT = 10000;
+    /**
+     * 连接闲置2分钟后需要重新检测
+     */
+    private static final int VALIDATE_AFTER_INACTIVITY = 120000;
 
     /**
      * 首先实例化一个连接池管理器，设置最大连接数、并发连接数
@@ -32,9 +50,10 @@ public class HttpClientConfig {
     public PoolingHttpClientConnectionManager getHttpClientConnectionManager() {
         PoolingHttpClientConnectionManager httpClientConnectionManager = new PoolingHttpClientConnectionManager();
         //最大连接数
-        httpClientConnectionManager.setMaxTotal(maxTotal);
+        httpClientConnectionManager.setMaxTotal(MAX_TOTAL);
         //并发数
-        httpClientConnectionManager.setDefaultMaxPerRoute(defaultMaxPerRoute);
+        httpClientConnectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_PER_ROUTE);
+        httpClientConnectionManager.setValidateAfterInactivity(VALIDATE_AFTER_INACTIVITY);
         return httpClientConnectionManager;
     }
 
@@ -75,10 +94,9 @@ public class HttpClientConfig {
     @Bean(name = "builder")
     public RequestConfig.Builder getBuilder() {
         RequestConfig.Builder builder = RequestConfig.custom();
-        return builder.setConnectTimeout(connectTimeout)
-                .setConnectionRequestTimeout(connectionRequestTimeout)
-                .setSocketTimeout(socketTimeout)
-                .setStaleConnectionCheckEnabled(staleConnectionCheckEnabled);
+        return builder.setConnectTimeout(CONNECT_TIMEOUT)
+                .setConnectionRequestTimeout(CONNECTION_REQUEST_TIMEOUT)
+                .setSocketTimeout(SOCKET_TIMEOUT);
     }
 
     /**
