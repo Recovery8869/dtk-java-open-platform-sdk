@@ -23,6 +23,7 @@ public class DtkParseContentOriginInfoResponse {
     private BigDecimal amount;
     private BigDecimal startFee;
     private BigDecimal price;
+    private BigDecimal actualPrice;
     private String activityId;
     private String pid;
     private Integer status;
