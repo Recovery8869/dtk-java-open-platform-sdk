@@ -113,7 +113,7 @@ class TbServiceControllerTest {
         request.setRequestUrl("https://openapi.dataoke.com/api/tb-service/creat-taokouling");
         request.setVersion("v1.0.0");
         request.setText("test");
-        request.setUrl("https://uland.taobao.com/");
+        request.setUrl("https://temai.m.taobao.com/");
         // request.setUserId("xx");
         // request.setLogo("xxx");
         DtkApiResponse<DtkCreatTaokoulingResponse> execute = client.execute(request);

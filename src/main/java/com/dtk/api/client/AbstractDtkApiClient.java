@@ -3,10 +3,11 @@ package com.dtk.api.client;
 import com.dtk.api.constant.DtkApiConstant;
 import com.dtk.api.exception.DtkApiException;
 import com.dtk.api.exception.DtkResultEnum;
-import com.dtk.api.http.HttpApiService;
+import com.dtk.api.http.WebUtils;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.utils.Assert;
 import com.dtk.api.utils.JsonUtil;
+import com.dtk.api.utils.SignMd5Util;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.extern.slf4j.Slf4j;
 
@@ -44,17 +45,17 @@ public abstract class AbstractDtkApiClient implements DtkClient {
             Assert.notBank(requestUrl, DtkResultEnum.URL_NOT_EMPTY);
             Assert.notBank(request.apiVersion(), DtkResultEnum.VERSION_NOT_EMPTY);
             // http请求
-            resultJson = HttpApiService.doGet(requestUrl, requestHolderWithSign);
+            resultJson = WebUtils.doGet(requestUrl, requestHolderWithSign);
             Assert.notBank(resultJson, DtkResultEnum.UNKNOWN_ERROR);
 
             TypeReference<T> responseType = request.responseType();
             tRsp = JsonUtil.jsonToPojoByTypeReference(resultJson, responseType);
         } catch (Exception ex) {
-            log.error("dtk_sdk处理异常：请求地址：{}，请求参数：{}", requestUrl,
-                    Optional.ofNullable(requestHolderWithSign).orElse(Collections.emptyMap()).toString());
-            log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
-            log.error("dtk_sdk处理异常：异常信息：", ex);
             if (ex instanceof DtkApiException) {
+                log.error("dtk_sdk处理异常：请求地址：{}，请求参数：{}", requestUrl,
+                        Optional.ofNullable(requestHolderWithSign).orElse(Collections.emptyMap()).toString());
+                log.error("dtk_sdk处理异常：响应结果：{}", resultJson);
+                log.error("dtk_sdk处理异常：异常信息：", ex);
                 DtkApiException exception = (DtkApiException) ex;
                 return (T) DtkApiResponse.buildFail(exception.getDtkResultEnum());
             } else {
@@ -79,7 +80,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
         String urlParams =
                 textParams.entrySet().stream().map(entry -> entry.getKey() + "=" + entry.getValue()).collect(Collectors.joining(
                         "&"));
-        String serverSign = com.dtk.util.SignMd5Util.sign(urlParams, appSecret);
+        String serverSign = SignMd5Util.sign(urlParams, appSecret);
         textParams.put(DtkApiConstant.RequestCommonParam.SIGN, serverSign);
         return textParams;
     }

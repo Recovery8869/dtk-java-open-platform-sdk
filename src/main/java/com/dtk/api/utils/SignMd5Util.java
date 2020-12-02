@@ -1,4 +1,4 @@
-package com.dtk.util;
+package com.dtk.api.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +21,10 @@ public class SignMd5Util {
         String signStr = String.format("%s&key=%s", content, key);
         String cipherText;
         return (cipherText = md5(signStr)) == null ? null : cipherText;
+    }
+
+    public static void main(String[] args) {
+
     }
 
     /**

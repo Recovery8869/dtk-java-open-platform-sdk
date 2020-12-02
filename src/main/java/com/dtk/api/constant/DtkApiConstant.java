@@ -27,6 +27,8 @@ public class DtkApiConstant {
      **/
     public static final String DATE_TIMEZONE = "GMT+8";
 
+    public static final String SDK_VERSION = "dtk-java-open-platform-sdk-1.0.0";
+
     public static class Charset {
         public static final String UTF_8 = "UTF-8";
     }
