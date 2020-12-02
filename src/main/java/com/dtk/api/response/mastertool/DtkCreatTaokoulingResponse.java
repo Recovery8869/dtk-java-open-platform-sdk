@@ -14,4 +14,5 @@ import lombok.Setter;
 public class DtkCreatTaokoulingResponse {
     private String model;
     private String longTpwd;
+    private String password_simple;
 }
