@@ -146,16 +146,14 @@ public class WebUtils {
             try {
                 conn = getConnection(buildGetUrl(url, query), METHOD_GET, ctype);
             } catch (IOException e) {
-                Map<String, String> map = getParamsFromUrl(url);
-                Logger.logCommError(e, url, map.get("app_key"), map.get("method"), params);
+                Logger.logCommError(e, url, params.get("appKey"), null, params);
                 throw e;
             }
 
             try {
                 rsp = getResponseAsString(conn);
             } catch (IOException e) {
-                Map<String, String> map = getParamsFromUrl(url);
-                Logger.logCommError(e, conn, map.get("app_key"), map.get("method"), params);
+                Logger.logCommError(e, conn, params.get("appKey"), null, params);
                 throw e;
             }
 
@@ -385,7 +383,7 @@ public class WebUtils {
             map = splitUrlQuery(url.substring(url.indexOf('?') + 1));
         }
         if (map == null) {
-            map = new HashMap<String, String>();
+            map = new HashMap<>();
         }
         return map;
     }
