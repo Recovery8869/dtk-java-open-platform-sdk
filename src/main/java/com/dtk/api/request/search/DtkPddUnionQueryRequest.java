@@ -41,7 +41,7 @@ public class DtkPddUnionQueryRequest implements DtkApiRequest<DtkApiResponse<Dtk
     @ApiModelProperty("店铺类型数组 1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店（未传为全部）")
     private String merchantTypeList;
     @ApiModelProperty("商品标签类目ID")
-    private String optId;
+    private Integer optId;
     @ApiModelProperty("默认值1，商品分页数")
     private Integer page;
     @ApiModelProperty("默认100，每页商品数量")

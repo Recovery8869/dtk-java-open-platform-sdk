@@ -13,7 +13,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 京东大牌折扣
+ * 京东大牌折扣请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:22

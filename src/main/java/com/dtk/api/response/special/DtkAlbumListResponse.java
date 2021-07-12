@@ -14,25 +14,21 @@ import java.util.List;
 @Getter
 @Setter
 public class DtkAlbumListResponse {
-    private List<ListInfo> list;
+    private String id;
+    private String title;
+    private String label;
+    private String userName;
+    private String headImg;
+    private String userGoodAt;
+    private String userDesc;
+    private String goodsCount;
+    private String likeNum;
+    private String promoteCount;
+    private String endType;
+    private String releaseTime;
+    private String endTime;
+    private List<GoodsListMessage> goodsList;
 
-    @Data
-    private static class ListInfo {
-        private String id;
-        private String title;
-        private String label;
-        private String userName;
-        private String headImg;
-        private String userGoodAt;
-        private String userDesc;
-        private String goodsCount;
-        private String likeNum;
-        private String promoteCount;
-        private String endType;
-        private String releaseTime;
-        private String endTime;
-        private List<GoodsListMessage> goodsList;
-    }
 
     @Data
     private static class GoodsListMessage {

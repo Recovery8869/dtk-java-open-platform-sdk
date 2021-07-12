@@ -14,7 +14,7 @@ import java.math.BigDecimal;
  */
 @Getter
 @Setter
-public class DtkJdOneDollarPurchaseResponse {
+public class DtkJdOneDollarPurchaseOrderInquiryResponse {
 
     /**
      * 标记唯一订单行：订单+sku维度的唯一标识

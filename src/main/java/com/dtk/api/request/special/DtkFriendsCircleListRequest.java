@@ -27,7 +27,7 @@ public class DtkFriendsCircleListRequest extends DtkPageParamRequest implements 
     @ApiModelProperty(value = "大淘客的一级分类id，如6、4")
     private String cid;
     @ApiModelProperty(value = "大淘客的二级类目id，通过超级分类API获取。仅允许传一个二级id，当一级类目id和二级类目id同时传入时，会自动忽略二级类目id")
-    private Integer subcid;
+    private String subcid;
     @ApiModelProperty(value = "排序方式，默认为0，0-综合排序，1-商品上架时间从高到低，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
     private String sort;
     @ApiModelProperty(value = "是否预告商品，1-预告商品，0-所有商品，不填默认为0")

@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkTipOffRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkTipOffResponse>>> {
+public class DtkTipOffRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkTipOffResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty("线报类型：1-超值买返2-天猫超市3-整点抢购4-最新线报-所有数据(默认)5-最新线报-天猫6-最新线报-京东7-最新线报-拼多多8-最新线报-淘宝")
@@ -42,8 +42,8 @@ public class DtkTipOffRequest extends DtkPageParamRequest implements DtkApiReque
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkTipOffResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkTipOffResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkTipOffResponse>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkTipOffResponse>>() {
         };
     }
 

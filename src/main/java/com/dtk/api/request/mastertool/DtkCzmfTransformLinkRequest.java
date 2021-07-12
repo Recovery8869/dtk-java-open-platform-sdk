@@ -35,6 +35,8 @@ public class DtkCzmfTransformLinkRequest implements DtkApiRequest<DtkApiResponse
     private String relationId;
     @ApiModelProperty(value = "优惠券id")
     private String couponId;
+    @ApiModelProperty(value = "淘宝联盟pid")
+    private String  pid;
     @ApiModelProperty("超值买返商品转链请求path")
     private final String requestPath = "/dels/taobao/kit/turnLink/czmf";
 

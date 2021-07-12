@@ -2,6 +2,7 @@ package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
+import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkListSimilerGoodsByOpenResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
@@ -10,7 +11,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,12 +21,12 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>> {
+public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.2.2")
     private String version = "v1.2.2";
     @RequiredCheck
     @ApiModelProperty(value = "大淘客的商品id", required = true)
-    private String id;
+    private Integer id;
     @ApiModelProperty(value = "每页条数，默认10，最大值100")
     private Integer size;
     @ApiModelProperty("猜你喜欢请求path")
@@ -43,8 +43,8 @@ public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiRes
     }
 
     @Override
-    public TypeReference<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>>() {
         };
     }
 

@@ -17,6 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 public class DtkGoodsListItemResponse extends DtkBaseItemResponse {
+
     @ApiModelProperty(value = "定金，若无定金，则显示0")
     private BigDecimal quanMLink;
     @ApiModelProperty(value = "立减，若无立减金额，则显示0")
@@ -39,4 +40,5 @@ public class DtkGoodsListItemResponse extends DtkBaseItemResponse {
     private Integer directCommission;
     @ApiModelProperty(value = "定向链接（12.22新增字段）")
     private String directCommissionLink;
+
 }

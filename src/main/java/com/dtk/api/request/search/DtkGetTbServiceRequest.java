@@ -24,8 +24,10 @@ import java.util.Map;
 public class DtkGetTbServiceRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetTbServiceResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v2.1.0")
     private String version = "v2.1.0";
+    @RequiredCheck
     @ApiModelProperty(value = "第几页，默认1", required = true, example = "1")
     private Long pageNo;
+    @RequiredCheck
     @ApiModelProperty(value = "每页条数， 默认20，范围值1~100", required = true, example = "20")
     private Long pageSize;
     @RequiredCheck

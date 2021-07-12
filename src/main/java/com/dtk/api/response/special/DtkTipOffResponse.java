@@ -16,6 +16,8 @@ import java.util.List;
 public class DtkTipOffResponse {
     private List<ListInfo> list;
     private List<TimeOption> timeOption;
+    private String totalNum;
+    private String pageId;
 
     @Data
     private static class ListInfo {

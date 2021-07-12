@@ -4,7 +4,7 @@ import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
-import com.dtk.api.response.special.DtkExplosiveGoodsListResponse;
+import com.dtk.api.response.special.DtkPopularGoodsListResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkExplosiveGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkExplosiveGoodsListResponse>>> {
+public class DtkExplosiveGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkPopularGoodsListResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty(value = "价格区间，1表示10~20元区；2表示20~40元区；3表示40元以上区；默认为1")
@@ -44,8 +44,8 @@ public class DtkExplosiveGoodsListRequest extends DtkPageParamRequest implements
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkExplosiveGoodsListResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkExplosiveGoodsListResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkPopularGoodsListResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkPopularGoodsListResponse>>>() {
         };
     }
 

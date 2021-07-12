@@ -15,7 +15,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 细分类目合集
+ * 细分类目合集请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:22

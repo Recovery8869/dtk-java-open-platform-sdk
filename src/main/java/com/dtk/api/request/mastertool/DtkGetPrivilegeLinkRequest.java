@@ -40,6 +40,10 @@ public class DtkGetPrivilegeLinkRequest implements DtkApiRequest<DtkApiResponse<
     private String externalId;
     @ApiModelProperty(value = "团长与下游渠道合作的特殊标识，用于统计渠道推广效果")
     private String xid;
+    @ApiModelProperty(value = "淘口令左边自定义符号,默认￥")
+    private String leftSymbol;
+    @ApiModelProperty(value = "淘口令右边自定义符号,默认￥ ")
+    private String rightSymbol;
     @ApiModelProperty("高效转链请求path")
     private final String requestPath = "/tb-service/get-privilege-link";
 

@@ -35,7 +35,6 @@ public class DtkApiClient extends AbstractDtkApiClient {
                 }
             }
         }
-
         return dtkApiClient;
     }
 }

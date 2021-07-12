@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 大淘客独家券商品响应结果实体
  *
- * @author baige
+ * @author 1
  * @date 2020/11/12 11:07
  */
 @Data
@@ -68,4 +68,5 @@ public class DtkExclusiveGoodsListResponse {
     private BigDecimal estimateAmount;
     private Integer freeshipRemoteDistrict;
     private List<String> specialText;
+
 }

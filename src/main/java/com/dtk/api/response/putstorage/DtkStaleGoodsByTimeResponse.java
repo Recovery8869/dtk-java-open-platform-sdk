@@ -17,4 +17,5 @@ public class DtkStaleGoodsByTimeResponse {
     private Integer id;
     @ApiModelProperty(value = "淘宝商品id")
     private String goodsId;
+
 }

@@ -14,7 +14,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 热门主播力荐商品
+ * 热门主播力荐商品请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:22

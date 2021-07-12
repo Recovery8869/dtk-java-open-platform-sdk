@@ -14,7 +14,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 京东实时榜单
+ * 京东实时榜单请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:22

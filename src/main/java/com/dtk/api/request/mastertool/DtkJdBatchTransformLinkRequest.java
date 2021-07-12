@@ -27,7 +27,7 @@ public class DtkJdBatchTransformLinkRequest implements DtkApiRequest<DtkApiRespo
     @ApiModelProperty(value = "目标推客的联盟ID")
     private String unionId;
     @ApiModelProperty(value = "新增推广位id （若无subUnionId权限，可入参该参数用来确定不同用户下单情况）")
-    private String positionId;
+    private Long positionId;
     @ApiModelProperty(value = "联盟子推客身份标识（不能传入接口调用者自己的pid）")
     private String childPid;
     @ApiModelProperty(value = "子渠道标识，您可自定义传入字母、数字或下划线，最多支持80个字符，该参数会在订单行查询接口中展示，需要有权限才可使用")

@@ -20,7 +20,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkLiveMaterialGoodsListRequest implements DtkApiRequest<DtkApiResponse<DtkLiveMaterialGoodsListResponse>> {
+public class DtkLiveMaterialGoodsListRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkLiveMaterialGoodsListResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty(value = "选择某一天的直播商品数据，默认返回全部参与过直播，且未下架的商品。时间格式：2020-09-16")
@@ -41,8 +41,8 @@ public class DtkLiveMaterialGoodsListRequest implements DtkApiRequest<DtkApiResp
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkLiveMaterialGoodsListResponse>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkLiveMaterialGoodsListResponse>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkLiveMaterialGoodsListResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkLiveMaterialGoodsListResponse>>>() {
         };
     }
 

@@ -13,7 +13,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 商品历史券后价请求参数实体
+ * 淘宝商品历史券后价请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:14

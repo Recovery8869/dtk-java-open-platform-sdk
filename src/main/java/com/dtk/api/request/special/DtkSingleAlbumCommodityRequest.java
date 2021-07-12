@@ -13,7 +13,7 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 单个专辑商品列表
+ * 单个专辑商品列表请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:22
