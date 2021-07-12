@@ -7,7 +7,7 @@ import lombok.Setter;
 /**
  * 品牌商品列表响应结果实体
  *
- * @author baige
+ * @author 1
  * @date 2020/11/30 17:44
  */
 @Getter

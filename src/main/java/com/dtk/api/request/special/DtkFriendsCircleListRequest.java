@@ -1,8 +1,8 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkFriendsCircleListResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -36,6 +36,8 @@ public class DtkFriendsCircleListRequest extends DtkPageParamRequest implements 
     private Integer freeshipRemoteDistrict;
     @ApiModelProperty(value = "大淘客id或淘宝id，查询单个商品是否有朋友圈文案，如果有，则返回商品信息及朋友圈文案，如果没有，显示10006错误")
     private String goodsId;
+    @ApiModelProperty("朋友圈文案请求path")
+    private final String requestPath = "/goods/friends-circle-list";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -54,13 +56,7 @@ public class DtkFriendsCircleListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public DtkFriendsCircleListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

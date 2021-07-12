@@ -1,10 +1,10 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkGetPrivilegeLinkResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -20,9 +20,10 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetPrivilegeLinkResponse>> {
+public class DtkGetPrivilegeLinkRequest implements DtkApiRequest<DtkApiResponse<DtkGetPrivilegeLinkResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.3.0")
     private String version = "v1.3.0";
+    @RequiredCheck
     @ApiModelProperty(value = "淘宝商品id", required = true)
     private String goodsId;
     @ApiModelProperty(value = "商品的优惠券ID，一个商品在联盟可能有多个优惠券，可通过填写该参数的方式选择使用的优惠券，请确认优惠券ID正确，否则无法正常跳转")
@@ -39,6 +40,8 @@ public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements Dt
     private String externalId;
     @ApiModelProperty(value = "团长与下游渠道合作的特殊标识，用于统计渠道推广效果")
     private String xid;
+    @ApiModelProperty("高效转链请求path")
+    private final String requestPath = "/tb-service/get-privilege-link";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -57,13 +60,7 @@ public class DtkGetPrivilegeLinkRequest extends DtkUrlParamRequest implements Dt
     }
 
     @Override
-    public DtkGetPrivilegeLinkRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

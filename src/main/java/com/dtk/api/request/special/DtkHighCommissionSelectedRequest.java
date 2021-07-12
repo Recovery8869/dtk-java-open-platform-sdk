@@ -3,8 +3,8 @@ package com.dtk.api.request.special;
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.response.base.DtkDiffPageResponse;
-import com.dtk.api.response.special.DtkGetVideoGoodsListResponse;
+import com.dtk.api.response.base.DtkPageResponse;
+import com.dtk.api.response.special.DtkHighCommissionSelectedResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,18 +14,22 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * 短视频商品请求参数实体
+ * 高佣精选
  *
- * @author baige
- * @date 2020/11/30 16:57
+ * @author 1
+ * @date 2020/11/10 18:22
  */
 @Getter
 @Setter
-public class DtkGetVideoGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkDiffPageResponse<DtkGetVideoGoodsListResponse>>> {
+public class DtkHighCommissionSelectedRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkHighCommissionSelectedResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
-    @ApiModelProperty(value = "短视频分类id")
+    @ApiModelProperty("大淘客的一级分类id")
     private Integer cid;
+    @ApiModelProperty("大淘客的一级分类id")
+    private Integer sort;
+    @ApiModelProperty("高佣精选请求path")
+    private final String requestPath = "/goods/singlePage/list-height-commission";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -38,19 +42,13 @@ public class DtkGetVideoGoodsListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkDiffPageResponse<DtkGetVideoGoodsListResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkDiffPageResponse<DtkGetVideoGoodsListResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkHighCommissionSelectedResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkHighCommissionSelectedResponse>>>() {
         };
     }
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
-    }
-
-    @Override
-    public DtkGetVideoGoodsListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
+        return this.requestPath;
     }
 }

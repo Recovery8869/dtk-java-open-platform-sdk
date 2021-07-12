@@ -2,7 +2,6 @@ package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.special.DtkCatalogueResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -21,9 +20,11 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkCatalogueRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkCatalogueResponse>>> {
+public class DtkCatalogueRequest implements DtkApiRequest<DtkApiResponse<List<DtkCatalogueResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.1.0")
     private String version = "v1.1.0";
+    @ApiModelProperty("精选专题请求path")
+    private final String requestPath = "/goods/topic/catalogue";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -42,13 +43,7 @@ public class DtkCatalogueRequest extends DtkUrlParamRequest implements DtkApiReq
     }
 
     @Override
-    public DtkCatalogueRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

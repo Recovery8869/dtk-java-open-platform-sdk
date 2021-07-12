@@ -1,8 +1,8 @@
 package com.dtk.api.request.putstorage;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkNewestGoodsResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -63,12 +63,8 @@ public class DtkNewestGoodsRequest extends DtkPageParamRequest implements DtkApi
     private BigDecimal monthSalesLowerLimit;
     @ApiModelProperty(value = "排序字段，默认为0，0-综合排序，1-商品上架时间从新到旧，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
     private String sort;
-
-    @Override
-    public DtkNewestGoodsRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
+    @ApiModelProperty("商品更新请求path")
+    private final String requestPath = "/goods/get-newest-goods";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
@@ -88,6 +84,6 @@ public class DtkNewestGoodsRequest extends DtkPageParamRequest implements DtkApi
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

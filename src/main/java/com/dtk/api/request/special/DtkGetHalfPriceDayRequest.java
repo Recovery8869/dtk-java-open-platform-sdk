@@ -2,9 +2,9 @@ package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.special.DtkGetHalfPriceDayResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -20,11 +20,14 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetHalfPriceDayRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetHalfPriceDayResponse>> {
+public class DtkGetHalfPriceDayRequest implements DtkApiRequest<DtkApiResponse<DtkGetHalfPriceDayResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
+    @RequiredCheck
     @ApiModelProperty(value = "默认为当前场次，场次输入格式，例如02、08、12、13", required = true)
     private String sessions;
+    @ApiModelProperty("每日半价请求path")
+    private final String requestPath = "/goods/get-half-price-day";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -43,13 +46,7 @@ public class DtkGetHalfPriceDayRequest extends DtkUrlParamRequest implements Dtk
     }
 
     @Override
-    public DtkGetHalfPriceDayRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

@@ -1,8 +1,8 @@
 package com.dtk.api.request.putstorage;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkGoodsListItemResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -38,16 +38,14 @@ public class DtkPullGoodsByTimeRequest extends DtkPageParamRequest implements Dt
     private String endTime;
     @ApiModelProperty(value = "偏远地区包邮，1-是，0-非偏远地区，不填默认所有商品")
     private Integer freeshipRemoteDistrict;
+    @ApiModelProperty(value = "是否为精选商品，默认全部商品，1-精选商品（3.19新增字段）")
+    private Integer choice;
+    @ApiModelProperty("定时拉取请求path")
+    private final String requestPath = "/goods/pull-goods-by-time";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
-    }
-
-    @Override
-    public DtkPullGoodsByTimeRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
     }
 
     @Override
@@ -63,6 +61,6 @@ public class DtkPullGoodsByTimeRequest extends DtkPageParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

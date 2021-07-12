@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 高效转链响应结果实体
  *
- * @author baige
+ * @author 1
  * @date 2020/11/30 15:38
  */
 @Data
@@ -45,4 +45,11 @@ public class DtkGetPrivilegeLinkResponse {
 
     @ApiModelProperty(value = "微信防封二维码")
     private String kuaiZhanUrl;
+
+    @ApiModelProperty(value = "商品原价(2020/12/30新增字段)")
+    private String originalPrice;
+
+    @ApiModelProperty(value = "券后价(2020/12/30新增字段)")
+    private String actualPrice;
+
 }

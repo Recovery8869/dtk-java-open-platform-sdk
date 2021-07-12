@@ -2,9 +2,9 @@ package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.mastertool.DtkTwdToTwdResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -20,9 +20,10 @@ import java.util.TreeMap;
  */
 @Getter
 @Setter
-public class DtkTwdToTwdRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkTwdToTwdResponse>> {
+public class DtkTwdToTwdRequest implements DtkApiRequest<DtkApiResponse<DtkTwdToTwdResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
+    @RequiredCheck
     @ApiModelProperty(value = "支持包含文本的淘口令，但最好是一个单独淘口令")
     private String content;
     @ApiModelProperty(value = "推广位ID，用户可自由填写当前大淘客账号下已授权淘宝账号的任一pid，若未填写，则默认使用创建应用时绑定的pid")
@@ -33,16 +34,12 @@ public class DtkTwdToTwdRequest extends DtkUrlParamRequest implements DtkApiRequ
     private String special_id;
     @ApiModelProperty(value = "淘宝客外部用户标记，如自身系统账户ID；微信ID等")
     private String external_id;
+    @ApiModelProperty("淘口令转淘口令请求path")
+    private final String requestPath = "/tb-service/twd-to-twd";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
-    }
-
-    @Override
-    public DtkTwdToTwdRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
     }
 
     @Override
@@ -58,6 +55,6 @@ public class DtkTwdToTwdRequest extends DtkUrlParamRequest implements DtkApiRequ
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

@@ -7,12 +7,15 @@ import com.dtk.api.http.WebUtils;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.utils.Assert;
 import com.dtk.api.utils.JsonUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.dtk.api.utils.SignMd5Util;
 import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -26,6 +29,8 @@ import java.util.stream.Collectors;
 public abstract class AbstractDtkApiClient implements DtkClient {
     private final String appKey;
     private final String appSecret;
+
+    private static final String BASE_URL = "https://openapi.dataoke.com/api";
 
     public AbstractDtkApiClient(String appKey, String appSecret) {
         this.appKey = appKey;
@@ -45,7 +50,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
             Assert.notBank(requestUrl, DtkResultEnum.URL_NOT_EMPTY);
             Assert.notBank(request.apiVersion(), DtkResultEnum.VERSION_NOT_EMPTY);
             // http请求
-            resultJson = WebUtils.doGet(requestUrl, requestHolderWithSign);
+            resultJson = WebUtils.doGet(BASE_URL + requestUrl, requestHolderWithSign);
             Assert.notBank(resultJson, DtkResultEnum.UNKNOWN_ERROR);
 
             TypeReference<T> responseType = request.responseType();
@@ -74,6 +79,15 @@ public abstract class AbstractDtkApiClient implements DtkClient {
      */
     private Map<String, String> getRequestHolderWithSign(DtkApiRequest<?> request)
             throws IllegalAccessException {
+        Field[] fields = request.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            if (field.isAnnotationPresent(RequiredCheck.class)) {
+                if (Objects.isNull(field.get(request))) {
+                    throw new DtkApiException("请求参数必填项缺失！");
+                }
+            }
+        }
         Map<String, String> textParams = request.getTextParams();
         textParams.put(DtkApiConstant.RequestCommonParam.APP_KEY, appKey);
         // 生成签名

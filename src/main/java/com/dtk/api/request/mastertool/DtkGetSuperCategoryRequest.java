@@ -2,7 +2,6 @@ package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.mastertool.DtkGetSuperCategoryResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -21,9 +20,11 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetSuperCategoryRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetSuperCategoryResponse>>> {
+public class DtkGetSuperCategoryRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetSuperCategoryResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.1.0")
     private String version = "v1.1.0";
+    @ApiModelProperty("超级分类请求path")
+    private final String requestPath = "/category/get-super-category";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -41,14 +42,9 @@ public class DtkGetSuperCategoryRequest extends DtkUrlParamRequest implements Dt
         };
     }
 
-    @Override
-    public DtkGetSuperCategoryRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

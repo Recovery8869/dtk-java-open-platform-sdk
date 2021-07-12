@@ -1,6 +1,6 @@
 package com.dtk.api.response.mastertool;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,15 +14,23 @@ import lombok.Setter;
 @Setter
 public class DtkMergeRedEnvelopesResponse {
     private String link;
-    @JsonProperty("Tpwd")
-    private String Tpwd;
+    @JsonAlias("Tpwd")
+    private String tpwd;
+    @JsonAlias("longTpwd")
     private String longTpwd;
+    @JsonAlias("shortURL")
     private String shortURL;
-    private String mobile_url;
-    private String schema_url;
-    private String short_url;
-    private String we_app_web_view_short_url;
-    private String mobile_short_url;
-    private String we_app_web_view_url;
+    @JsonAlias("mobile_url")
+    private String mobileUrl;
+    @JsonAlias("schema_url")
+    private String schemaUrl;
+    @JsonAlias("short_url")
+    private String shortUrl;
+    @JsonAlias("we_app_web_view_short_url")
+    private String weAppWebViewShortUrl;
+    @JsonAlias("mobile_short_url")
+    private String mobileShortUrl;
+    @JsonAlias("we_app_web_view_url")
+    private String weAppWebViewUrl;
     private String url;
 }

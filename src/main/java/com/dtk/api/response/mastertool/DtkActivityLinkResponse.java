@@ -1,5 +1,6 @@
 package com.dtk.api.response.mastertool;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,18 +8,29 @@ import lombok.Setter;
 /**
  * 官方活动会场转链响应结果实体
  *
- * @author 1
- * @date 2020/11/11 16:12
+ * @author:YSH
+ * @date: 2021/7/05
+ * @time: 09:57
  */
 @Getter
 @Setter
 public class DtkActivityLinkResponse {
-    private String page_name;
-    private String click_url;
+    @JsonAlias("page_name")
+    private String pageName;
+    @JsonAlias("click_url")
+    private String clickUrl;
     @JsonProperty("Tpwd")
-    private String Tpwd;
+    private String tpwd;
+    @JsonAlias("longTpwd")
     private String longTpwd;
-    private String terminal_type;
-    private String page_start_time;
-    private String page_end_time;
+    @JsonAlias("terminal_type")
+    private String terminalType;
+    @JsonAlias("page_start_time")
+    private String pageStartTime;
+    @JsonAlias("page_end_time")
+    private String pageEndTime;
+    @JsonAlias("wx_qrcode_url")
+    private String wxQrcodeUrl;
+    @JsonAlias("wx_miniprogram_path")
+    private String wxMiniProgramPath;
 }

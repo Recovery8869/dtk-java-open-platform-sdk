@@ -1,8 +1,8 @@
 package com.dtk.api.request.putstorage;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkGoodsListItemResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -65,6 +65,12 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     private BigDecimal monthSalesLowerLimit;
     @ApiModelProperty(value = "偏远地区包邮，1-是，0-非偏远地区，不填默认所有商品")
     private Integer freeshipRemoteDistrict;
+    @ApiModelProperty(value = "定向佣金类型，3查询定向佣金商品，否则查询全部商品（12.22新增字段）")
+    private Integer directCommissionType;
+    @ApiModelProperty(value = "是否为精选商品，默认全部，1-精选商品（3.19新增字段）")
+    private Integer choice;
+    @ApiModelProperty("商品列表请求path")
+    private final String requestPath = "/goods/get-goods-list";
 
     @Override
     public String apiVersion() {
@@ -83,14 +89,9 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
         return ObjectUtil.objToMap(this);
     }
 
-    @Override
-    public DtkGoodsListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

@@ -1,10 +1,10 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkGoodsCommentListResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -20,15 +20,22 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGoodsCommentListRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkGoodsCommentListResponse>> {
+public class DtkGoodsCommentListRequest implements DtkApiRequest<DtkApiResponse<DtkGoodsCommentListResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
+    @RequiredCheck
     @ApiModelProperty(value = "大淘客商品id（id和goodsid其中一个必填）")
     private Integer id;
     @ApiModelProperty(value = "淘宝商品id（id和goodsid其中一个必填）")
     private String goodsId;
     @ApiModelProperty(value = "默认：0-全部 评论类型：0-全部；1-含图；2-含视频")
     private Integer type;
+    @ApiModelProperty(value = "默认：0-全部 评论类型：0-全部；1-含图；2-含视频")
+    private Integer sort;
+    @ApiModelProperty(value = "评论类型 0-全部 1-去掉默认好评 默认为0(2020/12/30新增字段)")
+    private Integer haopingType;
+    @ApiModelProperty("商品评论请求path")
+    private final String requestPath = "/comment/get-comment-list";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -48,12 +55,7 @@ public class DtkGoodsCommentListRequest extends DtkUrlParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 
-    @Override
-    public DtkGoodsCommentListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
 }

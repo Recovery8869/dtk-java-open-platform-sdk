@@ -2,9 +2,9 @@ package com.dtk.api.request.search;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.search.DtkSearchSuggestionResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -21,23 +21,21 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkSearchSuggestionRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkSearchSuggestionResponse>>> {
+public class DtkSearchSuggestionRequest implements DtkApiRequest<DtkApiResponse<List<DtkSearchSuggestionResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.2")
     private String version = "v1.0.2";
+    @RequiredCheck
     @ApiModelProperty(value = "关键词", required = true)
     private String keyWords;
+    @RequiredCheck
     @ApiModelProperty(value = "当前搜索API类型：1.大淘客搜索 2.联盟搜索 3.超级搜索", required = true)
     private Integer type;
+    @ApiModelProperty("联想词请求path")
+    private final String requestPath = "/goods/search-suggestion";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
-    }
-
-    @Override
-    public DtkSearchSuggestionRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
     }
 
     @Override
@@ -53,6 +51,6 @@ public class DtkSearchSuggestionRequest extends DtkUrlParamRequest implements Dt
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

@@ -30,7 +30,7 @@ class CategoryControllerTest {
     void getHotSearch() {
         DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, appSecret);
         DtkGetTop100Request request = new DtkGetTop100Request();
-        request.setRequestUrl("https://openapi.dataoke.com/api/category/get-top100");
+        //("https://openapi.dataoke.com/api/category/get-top100");
         request.setVersion("v1.0.1");
         DtkApiResponse<DtkGetTop100Response> execute = client.execute(request);
         if (execute.isSuccess()) {
@@ -42,7 +42,7 @@ class CategoryControllerTest {
     void getSuperCategory() {
         DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, appSecret);
         DtkGetSuperCategoryRequest request = new DtkGetSuperCategoryRequest();
-        request.setRequestUrl("https://openapi.dataoke.com/api/category/get-super-category");
+        //("https://openapi.dataoke.com/api/category/get-super-category");
         request.setVersion("v1.1.0");
         DtkApiResponse<List<DtkGetSuperCategoryResponse>> execute = client.execute(request);
         if (execute.isSuccess()) {
@@ -54,7 +54,7 @@ class CategoryControllerTest {
     void getDdqGoodsList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkDdqGoodsListRequest request = new DtkDdqGoodsListRequest();
-        request.setRequestUrl("https://openapi.dataoke.com/api/category/ddq-goods-list");
+        //("https://openapi.dataoke.com/api/category/ddq-goods-list");
         request.setVersion("v1.1.0");
         request.setRoundTime("2020-10-10 00:00:00");
         DtkApiResponse<DtkDdqGoodsListResponse> execute = client.execute(request);
@@ -67,7 +67,7 @@ class CategoryControllerTest {
     void getTbTopicList() {
         DtkApiClient client = DtkApiClient.getInstance("appKey", "appSecret");
         DtkGetTbTopicListRequest request = new DtkGetTbTopicListRequest();
-        request.setRequestUrl("https://openapi.dataoke.com/api/category/ddq-goods-list");
+        //("https://openapi.dataoke.com/api/category/ddq-goods-list");
         request.setVersion("v1.1.0");
         request.setPageId("1");
         request.setPageSize(20);

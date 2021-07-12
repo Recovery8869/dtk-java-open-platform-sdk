@@ -27,29 +27,29 @@ import java.util.List;
 @RequestMapping("/api/category")
 public class CategoryController extends BaseController {
 
-    @GetMapping("/get-top100")
-    @ApiOperation("热搜记录Top100API")
-    public DtkApiResponse<DtkGetTop100Response> getHotSearch(DtkGetTop100Request dtkGetTop100Request) {
-        return getDtkClient().execute(dtkGetTop100Request.customUrl(getRequestUrl()));
-    }
-
-    @GetMapping("/get-super-category")
-    @ApiOperation("超级分类API")
-    public DtkApiResponse<List<DtkGetSuperCategoryResponse>> getSuperCategory(DtkGetSuperCategoryRequest dtkGetSuperCategoryRequest) {
-        return getDtkClient().execute(dtkGetSuperCategoryRequest.customUrl(getRequestUrl()));
-    }
-
-    @GetMapping("ddq-goods-list")
-    @ApiOperation("咚咚抢API")
-    public DtkApiResponse<DtkDdqGoodsListResponse> getDdqGoodsList(DtkDdqGoodsListRequest dtkDdqGoodsListRequest) {
-        return getDtkClient().execute(dtkDdqGoodsListRequest.customUrl(getRequestUrl()));
-    }
-
-    @GetMapping("get-tb-topic-list")
-    @ApiOperation("官方活动推广API")
-    public DtkApiResponse<List<DtkGetTbTopicListResponse>> getTbTopicList(DtkGetTbTopicListRequest dtkGetTbTopicListRequest) {
-        return getDtkClient().execute(dtkGetTbTopicListRequest.customUrl(getRequestUrl()));
-    }
+//    @GetMapping("/get-top100")
+//    @ApiOperation("热搜记录Top100API")
+//    public DtkApiResponse<DtkGetTop100Response> getHotSearch(DtkGetTop100Request dtkGetTop100Request) {
+//        return getDtkClient().execute(dtkGetTop100Request.customUrl(getRequestUrl()));
+//    }
+//
+//    @GetMapping("/get-super-category")
+//    @ApiOperation("超级分类API")
+//    public DtkApiResponse<List<DtkGetSuperCategoryResponse>> getSuperCategory(DtkGetSuperCategoryRequest dtkGetSuperCategoryRequest) {
+//        return getDtkClient().execute(dtkGetSuperCategoryRequest.customUrl(getRequestUrl()));
+//    }
+//
+//    @GetMapping("ddq-goods-list")
+//    @ApiOperation("咚咚抢API")
+//    public DtkApiResponse<DtkDdqGoodsListResponse> getDdqGoodsList(DtkDdqGoodsListRequest dtkDdqGoodsListRequest) {
+//        return getDtkClient().execute(dtkDdqGoodsListRequest.customUrl(getRequestUrl()));
+//    }
+//
+//    @GetMapping("get-tb-topic-list")
+//    @ApiOperation("官方活动推广API")
+//    public DtkApiResponse<List<DtkGetTbTopicListResponse>> getTbTopicList(DtkGetTbTopicListRequest dtkGetTbTopicListRequest) {
+//        return getDtkClient().execute(dtkGetTbTopicListRequest.customUrl(getRequestUrl()));
+//    }
 }
 
 

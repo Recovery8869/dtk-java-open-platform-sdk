@@ -1,5 +1,6 @@
 package com.dtk.api.response.search;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,33 +18,62 @@ public class DtkGetTbServiceResponse {
     private String title;
     private Integer volume;
     private String nick;
-    private String coupon_start_time;
-    private String coupon_end_time;
-    private String tk_total_sales;
-    private String coupon_id;
-    private String pict_url;
-    private DtkGetTbServiceImagesResponse small_images;
-    private String reserve_price;
-    private String zk_final_price;
-    private Integer user_type;
-    private Long seller_id;
-    private Integer coupon_total_count;
-    private Integer coupon_remain_count;
-    private String coupon_info;
-    private String shop_title;
-    private Integer shop_dsr;
-    private String level_one_category_name;
-    private Integer level_one_category_id;
-    private String category_name;
-    private Integer category_id;
-    private String short_title;
-    private String white_image;
-    private String coupon_start_fee;
-    private String coupon_amount;
-    private String item_description;
-    private Long item_id;
-    private String commission_rate;
-    private BigDecimal ysyl_tlj_face;
-    private BigDecimal presale_deposit;
-    private String presale_discount_fee_text;
+    @JsonAlias("coupon_start_time")
+    private String couponStartTime;
+    @JsonAlias("coupon_end_time")
+    private String couponEndTime;
+    @JsonAlias("tk_total_sales")
+    private String tkTotalSales;
+    @JsonAlias("coupon_id")
+    private String couponId;
+    @JsonAlias("pict_url")
+    private String pictUrl;
+    @JsonAlias("small_images")
+    private DtkGetTbServiceImagesResponse smallImages;
+    @JsonAlias("reserve_price")
+    private String reservePrice;
+    @JsonAlias("zk_final_price")
+    private String zkFinalPrice;
+    @JsonAlias("user_type")
+    private Integer userType;
+    @JsonAlias("seller_id")
+    private Long sellerId;
+    @JsonAlias("coupon_total_count")
+    private Integer couponTotalCount;
+    @JsonAlias("coupon_remain_count")
+    private Integer couponRemainCount;
+    @JsonAlias("coupon_info")
+    private String couponInfo;
+    @JsonAlias("shop_title")
+    private String shopTitle;
+    @JsonAlias("shop_dsr")
+    private Integer shopDsr;
+    @JsonAlias("level_one_category_name")
+    private String levelOneCategoryName;
+    @JsonAlias("level_one_category_id")
+    private Integer levelOneCategoryId;
+    @JsonAlias("category_name")
+    private String categoryName;
+    @JsonAlias("category_id")
+    private Integer categoryId;
+    @JsonAlias("short_title")
+    private String shortTitle;
+    @JsonAlias("white_image")
+    private String whiteImage;
+    @JsonAlias("coupon_start_fee")
+    private String couponStartFee;
+    @JsonAlias("coupon_amount")
+    private String couponAmount;
+    @JsonAlias("item_description")
+    private String itemDescription;
+    @JsonAlias("item_id")
+    private Long itemId;
+    @JsonAlias("commission_rate")
+    private String commissionRate;
+    @JsonAlias("ysyl_tlj_face")
+    private BigDecimal ysylTljFace;
+    @JsonAlias("presale_deposit")
+    private BigDecimal presaleDeposit;
+    @JsonAlias("presale_discount_fee_text")
+    private String presaleDiscountFeeText;
 }

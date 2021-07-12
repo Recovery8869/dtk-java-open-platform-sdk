@@ -2,7 +2,6 @@ package com.dtk.api.request.search;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.search.DtkGetTop100Response;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,9 +19,13 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetTop100Request extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetTop100Response>> {
+public class DtkGetTop100Request implements DtkApiRequest<DtkApiResponse<DtkGetTop100Response>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.1")
     private String version = "v1.0.1";
+    @ApiModelProperty(value = "1：买家热搜榜（默认）、2：淘客热搜榜")
+    private Integer type;
+    @ApiModelProperty("热搜记录请求path")
+    private final String requestPath = "/category/get-top100";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -41,13 +44,7 @@ public class DtkGetTop100Request extends DtkUrlParamRequest implements DtkApiReq
     }
 
     @Override
-    public DtkGetTop100Request customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

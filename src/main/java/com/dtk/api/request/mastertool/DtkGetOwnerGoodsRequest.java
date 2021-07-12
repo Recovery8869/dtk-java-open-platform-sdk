@@ -1,8 +1,8 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkGetOwnerGoodsItemResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -32,6 +32,8 @@ public class DtkGetOwnerGoodsRequest extends DtkPageParamRequest implements DtkA
     private String endTime;
     @ApiModelProperty(value = "排序字段，默认为0，0-综合排序，1-商品上架时间从新到旧，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
     private String sort;
+    @ApiModelProperty("我发布的商品请求path")
+    private final String requestPath = "/goods/get-owner-goods";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -50,13 +52,7 @@ public class DtkGetOwnerGoodsRequest extends DtkPageParamRequest implements DtkA
     }
 
     @Override
-    public DtkGetOwnerGoodsRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

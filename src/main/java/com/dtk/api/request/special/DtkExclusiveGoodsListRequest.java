@@ -1,8 +1,8 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkExclusiveGoodsListResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -28,6 +28,8 @@ public class DtkExclusiveGoodsListRequest extends DtkPageParamRequest implements
     private String cids;
     @ApiModelProperty(value = "排序方式，默认为0，0-综合排序，1-商品上架时间从高到低，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
     private String sort;
+    @ApiModelProperty("大淘客独家券商品请求path")
+    private final String requestPath = "/goods/exclusive-goods-list";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
@@ -46,13 +48,7 @@ public class DtkExclusiveGoodsListRequest extends DtkPageParamRequest implements
     }
 
     @Override
-    public DtkExclusiveGoodsListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

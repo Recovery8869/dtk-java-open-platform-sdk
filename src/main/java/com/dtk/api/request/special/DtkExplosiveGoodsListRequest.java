@@ -1,8 +1,8 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkExplosiveGoodsListResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -30,6 +30,8 @@ public class DtkExplosiveGoodsListRequest extends DtkPageParamRequest implements
     private String priceCid;
     @ApiModelProperty(value = "大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”。1 -女装，2 -母婴，3 -美妆，4 -居家日用，5 -鞋品，6 -美食，7 -文娱车品，8 -数码家电，9 -男装，10 -内衣，11 -箱包，12 -配饰，13 -户外运动，14 -家装家纺。不填默认全部")
     private String cids;
+    @ApiModelProperty("每日爆品推荐请求path")
+    private final String requestPath = "/goods/explosive-goods-list";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -48,13 +50,7 @@ public class DtkExplosiveGoodsListRequest extends DtkPageParamRequest implements
     }
 
     @Override
-    public DtkExplosiveGoodsListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

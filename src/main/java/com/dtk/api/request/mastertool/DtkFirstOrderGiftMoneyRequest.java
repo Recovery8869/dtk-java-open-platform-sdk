@@ -1,8 +1,9 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
+import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkFirstOrderGiftMoneyResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -20,7 +21,7 @@ import java.util.TreeMap;
  */
 @Getter
 @Setter
-public class DtkFirstOrderGiftMoneyRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkFirstOrderGiftMoneyResponse>> {
+public class DtkFirstOrderGiftMoneyRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkFirstOrderGiftMoneyResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.1.0")
     private String version = "v1.1.0";
     @ApiModelProperty(value = "大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”。1 -女装，2 -母婴，3 -美妆，4 -居家日用，5 -鞋品，6 -美食，7 -文娱车品，8 -数码家电，9 -男装，10 -内衣，11 -箱包，12 -配饰，13 -户外运动，14 -家装家纺")
@@ -31,6 +32,8 @@ public class DtkFirstOrderGiftMoneyRequest extends DtkPageParamRequest implement
     private String keyWord;
     @ApiModelProperty(value = "商品类型1表示大淘客商品2表示联盟商品。默认为1")
     private Integer goodsType;
+    @ApiModelProperty("首单礼金商品请求请求path")
+    private final String requestPath = "/goods/first-order-gift-money";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
@@ -43,19 +46,14 @@ public class DtkFirstOrderGiftMoneyRequest extends DtkPageParamRequest implement
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkFirstOrderGiftMoneyResponse>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkFirstOrderGiftMoneyResponse>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkFirstOrderGiftMoneyResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkFirstOrderGiftMoneyResponse>>>() {
         };
     }
 
     @Override
-    public DtkFirstOrderGiftMoneyRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
+    public String requestUrl() {
+        return this.requestPath;
     }
 
-    @Override
-    public String requestUrl() {
-        return this.getRequestUrl();
-    }
 }

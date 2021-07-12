@@ -84,8 +84,6 @@ public class DtkBaseItemResponse {
     private String activityEndTime;
     @ApiModelProperty(value = "店铺类型，1-天猫，0-淘宝")
     private Integer shopType;
-    @ApiModelProperty(value = "是否是金牌卖家：1-是，0-非金牌卖家")
-    private Integer goldSellers;
     @ApiModelProperty(value = "淘宝卖家id")
     private String sellerId;
     @ApiModelProperty(value = "店铺名称")
@@ -114,4 +112,12 @@ public class DtkBaseItemResponse {
     private Integer haitao;
     @ApiModelProperty(value = "是否是天猫超市商品：1-是，0-不是")
     private Integer tchaoshi;
+    @ApiModelProperty(value = "是否是金牌卖家：1-是，0-非金牌卖家")
+    private Integer goldSellers;
+    private BigDecimal quanMLink;
+    private BigDecimal hzQuanOver;
+    private Integer yunfeixian;
+    private BigDecimal estimateAmount;
+    private Integer freeshipRemoteDistrict;
+    private String shopLogo;
 }

@@ -1,5 +1,6 @@
 package com.dtk.api.response.mastertool;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,52 +13,100 @@ import lombok.Setter;
 @Getter
 @Setter
 public class DtkGetOrderDetailsResultsItemsResponse {
-    private String terminal_type;
-    private String item_category_name;
-    private String tk_paid_time;
-    private Long adzone_id;
-    private String alipay_total_price;
-    private String seller_shop_title;
-    private String alimama_share_fee;
-    private String trade_id;
-    private String click_time;
-    private String subsidy_rate;
-    private Integer refund_tag;
-    private String item_title;
-    private String order_type;
-    private String tb_paid_time;
-    private Integer tk_order_role;
-    private String total_commission_fee;
-    private Long pub_id;
-    private String pay_price;
-    private String item_img;
-    private String alimama_rate;
-    private Long item_id;
-    private String item_price;
-    private String tb_deposit_time;
-    private Integer tk_status;
-    private String total_commission_rate;
-    private String trade_parent_id;
-    private String subsidy_type;
-    private String tk_create_time;
-    private String pub_share_fee;
-    private Integer item_num;
-    private String tk_commission_fee_for_media_platform;
-    private String income_rate;
-    private String site_name;
-    private String pub_share_pre_fee;
-    private String tk_commission_rate_for_media_platform;
-    private String tk_deposit_time;
-    private String tk_total_rate;
-    private String pub_share_rate;
-    private String adzone_name;
-    private Long site_id;
-    private String item_link;
-    private String deposit_price;
-    private String is_lx;
-    private String seller_nick;
-    private String subsidy_fee;
-    private String flow_source;
-    private String tk_commission_pre_fee_for_media_platform;
-    private String tk_earning_time;
+    @JsonAlias("terminal_type")
+    private String terminalType;
+    @JsonAlias("item_category_name")
+    private String itemCategoryName;
+    @JsonAlias("tk_paid_time")
+    private String tkPaidTime;
+    @JsonAlias("adzone_id")
+    private Long adzoneId;
+    @JsonAlias("alipay_total_price")
+    private String alipayTotalPrice;
+    @JsonAlias("seller_shop_title")
+    private String sellerShopTitle;
+    @JsonAlias("alimama_share_fee")
+    private String alimamaShareFee;
+    @JsonAlias("trade_id")
+    private String tradeId;
+    @JsonAlias("click_time")
+    private String clickTime;
+    @JsonAlias("subsidy_rate")
+    private String subsidyRate;
+    @JsonAlias("refund_tag")
+    private Integer refundTag;
+    @JsonAlias("item_title")
+    private String itemTitle;
+    @JsonAlias("order_type")
+    private String orderType;
+    @JsonAlias("tb_paid_time")
+    private String tbPaidTime;
+    @JsonAlias("tk_order_role")
+    private Integer tkOrderRole;
+    @JsonAlias("total_commission_fee")
+    private String totalCommissionFee;
+    @JsonAlias("pub_id")
+    private Long pubId;
+    @JsonAlias("pay_price")
+    private String payPrice;
+    @JsonAlias("item_img")
+    private String itemImg;
+    @JsonAlias("alimama_rate")
+    private String alimamaRate;
+    @JsonAlias("item_id")
+    private Long itemId;
+    @JsonAlias("item_price")
+    private String itemPrice;
+    @JsonAlias("tb_deposit_time")
+    private String tbDepositTime;
+    @JsonAlias("tk_status")
+    private Integer tkStatus;
+    @JsonAlias("total_commission_rate")
+    private String totalCommissionRate;
+    @JsonAlias("trade_parent_id")
+    private String tradeParentId;
+    @JsonAlias("subsidy_type")
+    private String subsidyType;
+    @JsonAlias("tk_create_time")
+    private String tkCreateTime;
+    @JsonAlias("pub_share_fee")
+    private String pubShareFee;
+    @JsonAlias("item_num")
+    private Integer itemNum;
+    @JsonAlias("tk_commission_fee_for_media_platform")
+    private String tkCommissionFeeForMediaPlatform;
+    @JsonAlias("income_rate")
+    private String incomeRate;
+    @JsonAlias("site_name")
+    private String siteName;
+    @JsonAlias("pub_share_pre_fee")
+    private String pubSharePreFee;
+    @JsonAlias("tk_commission_rate_for_media_platform")
+    private String tkCommissionRateForMediaPlatform;
+    @JsonAlias("tk_deposit_time")
+    private String tkDepositTime;
+    @JsonAlias("tk_total_rate")
+    private String tkTotalRate;
+    @JsonAlias("pub_share_rate")
+    private String pubShareRate;
+    @JsonAlias("adzone_name")
+    private String adzoneName;
+    @JsonAlias("site_id")
+    private Long siteId;
+    @JsonAlias("item_link")
+    private String itemLink;
+    @JsonAlias("deposit_price")
+    private String depositPrice;
+    @JsonAlias("is_lx")
+    private String isLx;
+    @JsonAlias("seller_nick")
+    private String sellerNick;
+    @JsonAlias("subsidy_fee")
+    private String subsidyFee;
+    @JsonAlias("flow_source")
+    private String flowSource;
+    @JsonAlias("tk_commission_pre_fee_for_media_platform")
+    private String tkCommissionPreFeeForMediaPlatform;
+    @JsonAlias("tk_earning_time")
+    private String tkEarningTime;
 }

@@ -45,11 +45,4 @@ public interface DtkApiRequest<T> {
      */
     String requestUrl();
 
-    /**
-     * 自定义url请求地址
-     *
-     * @param requestUrl 自定义url
-     * @return 请求参数对象，这里为了达到通用，所以返回了object
-     */
-    Object customUrl(String requestUrl);
 }

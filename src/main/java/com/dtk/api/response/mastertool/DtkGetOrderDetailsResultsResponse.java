@@ -1,5 +1,6 @@
 package com.dtk.api.response.mastertool;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +15,6 @@ import java.util.List;
 @Getter
 @Setter
 public class DtkGetOrderDetailsResultsResponse {
-    private List<DtkGetOrderDetailsResultsItemsResponse> publisher_order_dto;
+    @JsonAlias("publisher_order_dto")
+    private List<DtkGetOrderDetailsResultsItemsResponse> publisherOrderDto;
 }

@@ -1,7 +1,6 @@
 package com.dtk.api.request.mastertool;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.request.base.DtkUrlParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkShopConvertResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -20,7 +19,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkShopConvertRequest extends DtkUrlParamRequest implements DtkApiRequest<DtkApiResponse<DtkShopConvertResponse>> {
+public class DtkShopConvertRequest implements DtkApiRequest<DtkApiResponse<DtkShopConvertResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty(value = "店铺id")
@@ -31,6 +30,8 @@ public class DtkShopConvertRequest extends DtkUrlParamRequest implements DtkApiR
     private String relationId;
     @ApiModelProperty(value = "店铺名称，用于返回淘口令")
     private String shopName;
+    @ApiModelProperty("店铺转链请求path")
+    private final String requestPath = "/dels/shop/convert";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -50,12 +51,7 @@ public class DtkShopConvertRequest extends DtkUrlParamRequest implements DtkApiR
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 
-    @Override
-    public DtkShopConvertRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
 }

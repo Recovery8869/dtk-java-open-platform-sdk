@@ -12,7 +12,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class DtkCreatTaokoulingResponse {
+    /**
+     * 淘口令
+     */
     private String model;
+    /**
+     * 针对iOS14版本，增加对应能解析的长口令
+     */
     private String longTpwd;
-    private String password_simple;
 }

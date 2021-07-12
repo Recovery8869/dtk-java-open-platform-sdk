@@ -1,8 +1,8 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.special.DtkGetBrandListResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -24,6 +24,8 @@ import java.util.Map;
 public class DtkGetBrandListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetBrandListResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.1.2")
     private String version = "v1.1.2";
+    @ApiModelProperty("品牌库请求path")
+    private final String requestPath = "/tb-service/get-brand-list";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -42,13 +44,7 @@ public class DtkGetBrandListRequest extends DtkPageParamRequest implements DtkAp
     }
 
     @Override
-    public DtkGetBrandListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

@@ -12,7 +12,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class DtkPageParamRequest extends DtkUrlParamRequest {
+public class DtkPageParamRequest {
     @ApiModelProperty(value = "每页条数，默认为100，最大值200，若小于10，则按10条处理，每页条数仅支持输入10,50,100,200", required = true, example =
             "10")
     private Integer pageSize;

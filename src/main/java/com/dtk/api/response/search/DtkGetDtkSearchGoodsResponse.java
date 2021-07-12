@@ -2,10 +2,12 @@ package com.dtk.api.response.search;
 
 import com.dtk.api.response.putstorage.DtkBaseItemResponse;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 大淘客搜索响应结果实体
@@ -24,8 +26,15 @@ public class DtkGetDtkSearchGoodsResponse extends DtkBaseItemResponse {
     private Integer yunfeixian;
     @ApiModelProperty(value = "预估淘礼金")
     private BigDecimal estimateAmount;
-    @ApiModelProperty(value = "店铺logo")
-    private String shopLogo;
     @ApiModelProperty(value = "偏远地区包邮，1-包邮，0-否")
     private Integer freeshipRemoteDistrict;
+    private List<BrandInfo> brandList;
+
+
+    @Data
+    public static class BrandInfo {
+        private Integer brandId;
+        private Integer brandLogo;
+        private Integer brandName;
+    }
 }

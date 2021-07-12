@@ -1,8 +1,8 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.special.DtkGetTbTopicListResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 官方活动推广请求参数实体
+ * 官方活动(1元购)请求参数实体
  *
  * @author 1
  * @date 2020/11/10 18:20
@@ -28,6 +28,8 @@ public class DtkGetTbTopicListRequest extends DtkPageParamRequest implements Dtk
     private Integer type;
     @ApiModelProperty(value = "阿里妈妈上申请的渠道id")
     private String channelId;
+    @ApiModelProperty("官方活动(1元购)请求path")
+    private final String requestPath = "/category/get-tb-topic-list";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
@@ -46,13 +48,7 @@ public class DtkGetTbTopicListRequest extends DtkPageParamRequest implements Dtk
     }
 
     @Override
-    public DtkGetTbTopicListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

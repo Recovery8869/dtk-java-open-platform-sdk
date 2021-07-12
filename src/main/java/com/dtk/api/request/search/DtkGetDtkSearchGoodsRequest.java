@@ -1,11 +1,12 @@
 package com.dtk.api.request.search;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
 import com.dtk.api.utils.ObjectUtil;
+import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -25,6 +26,7 @@ import java.util.Map;
 public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v2.1.2")
     private String version = "v2.1.2";
+    @RequiredCheck
     @ApiModelProperty(value = "关键词", required = true)
     private String keyWords;
     @ApiModelProperty(value = "大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”。当一级类目id和二级类目id同时传入时，会自动忽略二级类目id，一级分类id请求详情：1 -女装，2 -母婴，3 -美妆，4 -居家日用，5 -鞋品，6 -美食，7 -文娱车品，8 -数码家电，9 -男装，10 -内衣，11 -箱包，12 -配饰，13 -户外运动，14 -家装家纺")
@@ -61,16 +63,12 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
     private String sort;
     @ApiModelProperty(value = "偏远地区包邮，1-是，0-非偏远地区，不填默认所有商品")
     private Integer freeshipRemoteDistrict;
+    @ApiModelProperty("大淘客搜索请求path")
+    private final String requestPath = "/goods/get-dtk-search-goods";
 
     @Override
     public Map<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
-    }
-
-    @Override
-    public DtkGetDtkSearchGoodsRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
     }
 
     @Override
@@ -86,6 +84,6 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

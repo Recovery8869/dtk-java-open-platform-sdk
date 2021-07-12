@@ -25,7 +25,7 @@ class ShopControllerTest {
     void getShopConvertInfo() {
         DtkApiClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkShopConvertRequest request = new DtkShopConvertRequest();
-        request.setRequestUrl("https://openapi.dataoke.com/api/dels/shop/convert");
+        //("https://openapi.dataoke.com/api/dels/shop/convert");
         request.setVersion("v1.0.0");
         request.setSellerId("234");
         request.setPid("234_123_123_123");

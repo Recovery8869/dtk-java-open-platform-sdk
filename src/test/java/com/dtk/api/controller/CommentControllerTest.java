@@ -26,7 +26,7 @@ class CommentControllerTest {
     void getCommentList() {
         DtkClient client = DtkApiClient.getInstance(appKey, appSecret);
         DtkGoodsCommentListRequest request = new DtkGoodsCommentListRequest();
-        request.setRequestUrl("https://openapi.dataoke.com/api/comment/get-comment-list");
+        //("https://openapi.dataoke.com/api/comment/get-comment-list");
         request.setVersion("v1.0.0");
         request.setId(30713367);
         request.setGoodsId("617059027975");

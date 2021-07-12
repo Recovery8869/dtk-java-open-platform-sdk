@@ -1,8 +1,8 @@
 package com.dtk.api.request.putstorage;
 
 import com.dtk.api.client.DtkApiRequest;
-import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.request.base.DtkPageParamRequest;
+import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkStaleGoodsByTimeResponse;
 import com.dtk.api.utils.ObjectUtil;
@@ -28,16 +28,12 @@ public class DtkStaleGoodsByTimeRequest extends DtkPageParamRequest implements D
     private String startTime;
     @ApiModelProperty(value = "结束时间，默认为请求的时间，商品下架的时间小于等于结束时间，结束时间需要在当日")
     private String endTime;
+    @ApiModelProperty("失效商品请求path")
+    private final String requestPath = "/goods/get-stale-goods-by-time";
 
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
-    }
-
-    @Override
-    public DtkStaleGoodsByTimeRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
     }
 
     @Override
@@ -53,6 +49,6 @@ public class DtkStaleGoodsByTimeRequest extends DtkPageParamRequest implements D
 
     @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }

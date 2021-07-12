@@ -6,6 +6,7 @@ import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.special.DtkGetRankingListMergeResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +23,9 @@ import java.util.TreeMap;
 @Getter
 @Setter
 public class DtkGetRankingListRequest extends DtkGetRankingListBaseRequest implements DtkApiRequest<DtkApiResponse<List<DtkGetRankingListMergeResponse>>> {
+    @ApiModelProperty("各大榜单(包含所有榜单类型)请求path")
+    private final String requestPath = "/goods/get-ranking-list";
+
     @Override
     public TreeMap<String, String> getTextParams() throws IllegalAccessException {
         return ObjectUtil.objToMap(this);
@@ -39,13 +43,7 @@ public class DtkGetRankingListRequest extends DtkGetRankingListBaseRequest imple
     }
 
     @Override
-    public DtkGetRankingListRequest customUrl(String requestUrl) {
-        this.setRequestUrl(requestUrl);
-        return this;
-    }
-
-    @Override
     public String requestUrl() {
-        return this.getRequestUrl();
+        return this.requestPath;
     }
 }
