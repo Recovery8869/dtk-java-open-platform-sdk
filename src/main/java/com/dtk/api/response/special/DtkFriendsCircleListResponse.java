@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 朋友圈文案响应结果实体
  *
- * @author baige
+ * @author 1
  * @date 2020/11/12 15:48
  */
 @Data

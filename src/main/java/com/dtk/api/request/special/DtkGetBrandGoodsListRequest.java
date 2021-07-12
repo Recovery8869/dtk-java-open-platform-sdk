@@ -3,6 +3,7 @@ package com.dtk.api.request.special;
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
+import com.dtk.api.response.base.DtkDiffPageResponse;
 import com.dtk.api.response.special.DtkGetBrandGoodsListResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
@@ -21,7 +22,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetBrandGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetBrandGoodsListResponse>> {
+public class DtkGetBrandGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkDiffPageResponse<DtkGetBrandGoodsListResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @RequiredCheck
@@ -41,8 +42,8 @@ public class DtkGetBrandGoodsListRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkGetBrandGoodsListResponse>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkGetBrandGoodsListResponse>>() {
+    public TypeReference<DtkApiResponse<DtkDiffPageResponse<DtkGetBrandGoodsListResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkDiffPageResponse<DtkGetBrandGoodsListResponse>>>() {
         };
     }
 

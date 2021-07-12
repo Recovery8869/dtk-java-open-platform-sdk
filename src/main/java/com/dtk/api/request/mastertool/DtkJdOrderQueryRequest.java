@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +23,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkJdOrderQueryResponse>>> {
+public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "1.0.0";
     @RequiredCheck
@@ -55,8 +56,8 @@ public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkAp
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkJdOrderQueryResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkJdOrderQueryResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>>() {
         };
     }
 

@@ -1,6 +1,7 @@
 package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
+import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkJdNewYearCommodityResponse;
@@ -21,7 +22,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkJdNewYearCommodityRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkJdNewYearCommodityResponse>>> {
+public class DtkJdNewYearCommodityRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkJdNewYearCommodityResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
     @ApiModelProperty("大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”。")

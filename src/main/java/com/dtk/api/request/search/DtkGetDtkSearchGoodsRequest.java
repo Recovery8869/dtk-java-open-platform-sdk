@@ -4,7 +4,7 @@ import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
-import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
+import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse1;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -23,7 +23,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>> {
+public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>> {
     @ApiModelProperty(value = "版本号", example = "v2.1.2")
     private String version = "v2.1.2";
     @RequiredCheck
@@ -77,8 +77,8 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>>() {
         };
     }
 

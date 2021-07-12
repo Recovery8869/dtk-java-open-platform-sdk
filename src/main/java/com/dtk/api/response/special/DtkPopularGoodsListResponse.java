@@ -12,7 +12,8 @@ import java.util.List;
  * @date 2020/11/12 10:59
  */
 @Data
-public class DtkExplosiveGoodsListResponse {
+public class DtkPopularGoodsListResponse {
+
     private Integer id;
     private String goodsId;
     private String title;

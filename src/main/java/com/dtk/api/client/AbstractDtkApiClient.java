@@ -10,12 +10,13 @@ import com.dtk.api.utils.JsonUtil;
 import com.dtk.api.utils.RequiredCheck;
 import com.dtk.api.utils.SignMd5Util;
 import com.fasterxml.jackson.core.type.TypeReference;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -77,13 +78,15 @@ public abstract class AbstractDtkApiClient implements DtkClient {
      * @param request 请求参数对象
      * @return 组装完成的完整参数
      */
+    @SneakyThrows
     private Map<String, String> getRequestHolderWithSign(DtkApiRequest<?> request)
             throws IllegalAccessException {
+        //校验必填参数
         Field[] fields = request.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(RequiredCheck.class)) {
-                if (Objects.isNull(field.get(request))) {
+                if (StringUtils.isEmpty(field.get(request))) {
                     throw new DtkApiException("请求参数必填项缺失！");
                 }
             }
@@ -97,5 +100,14 @@ public abstract class AbstractDtkApiClient implements DtkClient {
         String serverSign = SignMd5Util.sign(urlParams, appSecret);
         textParams.put(DtkApiConstant.RequestCommonParam.SIGN, serverSign);
         return textParams;
+    }
+
+    /**
+     * 把一个字符串的第一个字母大写
+     */
+    private static String getMethodName(String fieldName) throws Exception {
+        byte[] items = fieldName.getBytes();
+        items[0] = (byte) ((char) items[0] - 'a' + 'A');
+        return new String(items);
     }
 }
