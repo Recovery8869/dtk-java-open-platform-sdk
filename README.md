@@ -4,4 +4,4 @@
 test文件夹中有所有接口的调用示例。
 
 # 延伸阅读
-大淘客开放平台网站：http://www.dataoke.com/kfpt/api-d.html?id=22
+大淘客开放平台网站：http://www.dataoke.com/kfpt/api-market.html
