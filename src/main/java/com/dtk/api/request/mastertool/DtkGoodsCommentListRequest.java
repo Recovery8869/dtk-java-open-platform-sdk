@@ -4,7 +4,6 @@ import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.mastertool.DtkGoodsCommentListResponse;
 import com.dtk.api.utils.ObjectUtil;
-import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -23,7 +22,6 @@ import java.util.Map;
 public class DtkGoodsCommentListRequest implements DtkApiRequest<DtkApiResponse<DtkGoodsCommentListResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
-    @RequiredCheck
     @ApiModelProperty(value = "大淘客商品id（id和goodsid其中一个必填）")
     private Integer id;
     @ApiModelProperty(value = "淘宝商品id（id和goodsid其中一个必填）")
