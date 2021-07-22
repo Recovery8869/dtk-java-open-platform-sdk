@@ -109,4 +109,6 @@ public class DtkGetOrderDetailsResultsItemsResponse {
     private String tkCommissionPreFeeForMediaPlatform;
     @JsonAlias("tk_earning_time")
     private String tkEarningTime;
+    @JsonAlias("special_id")
+    private String specialId;
 }

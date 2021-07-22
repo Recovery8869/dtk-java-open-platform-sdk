@@ -2,6 +2,7 @@ package com.dtk.api.controller;
 
 import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.request.special.*;
+import com.dtk.api.request.special.subranking.*;
 import com.dtk.api.response.DtkSingleAlbumCommodityResponse;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkDiffPageResponse;
@@ -9,6 +10,7 @@ import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkBaseItemResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
 import com.dtk.api.response.special.*;
+import com.dtk.api.response.special.subranking.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -183,6 +185,67 @@ class SpecialControllerTest {
         request.setPageSize(20);
         request.setPageId("1");
         DtkApiResponse<List<DtkGetRankingListMergeResponse>> execute = client.execute(request);
+    }
+
+    @Test
+        //各大榜单7(综合热搜榜)请求参数实体
+    void dtkGetRankingListByHotSearchRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkGetRankingListByHotSearchRequest request = new DtkGetRankingListByHotSearchRequest();
+        request.setRankType(1);
+        request.setCid(12);
+        request.setPageSize(20);
+        request.setPageId("1");
+        DtkApiResponse<List<DtkGetRankingListByHotSearchResponse>> execute = client.execute(request);
+    }
+
+    @Test
+        //各大榜单6(热词排行榜)请求参数实体
+    void dtkGetRankingListByHotWordRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkGetRankingListByHotWordRequest request = new DtkGetRankingListByHotWordRequest();
+        request.setRankType(1);
+        request.setCid(12);
+        request.setPageSize(20);
+        request.setPageId("1");
+        DtkApiResponse<List<DtkGetRankingListByHotWordResponse>> execute = client.execute(request);
+    }
+
+    @Test
+        //各大榜单6(热词排行榜)请求参数实体
+    void dtkGetRankingListByHotWordUpRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkGetRankingListByHotWordUpRequest request = new DtkGetRankingListByHotWordUpRequest();
+        request.setRankType(1);
+        request.setCid(12);
+        request.setPageSize(20);
+        request.setPageId("1");
+        DtkApiResponse<List<DtkGetRankingListByHotWordUpResponse>> execute = client.execute(request);
+    }
+
+
+    @Test
+        //各大榜单4(复购榜)请求参数实体
+    void dtkGetRankingListByReBuyRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkGetRankingListByReBuyRequest request = new DtkGetRankingListByReBuyRequest();
+        request.setRankType(1);
+        request.setCid(12);
+        request.setPageSize(20);
+        request.setPageId("1");
+        DtkApiResponse<List<DtkGetRankingListByReBuyResponse>> execute = client.execute(request);
+    }
+
+    @Test
+        //各大榜单(1(实时榜)，2(全天榜)，3(热推榜))请求参数实体
+    void dtkGetRankingListByTimeWholeHotRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkGetRankingListByTimeWholeHotRequest request = new DtkGetRankingListByTimeWholeHotRequest();
+        request.setRankType(1);
+        request.setCid(12);
+        request.setPageSize(20);
+        request.setPageId("1");
+        DtkApiResponse<List<DtkGetRankingListByTimeWholeHotResponse>> execute = client.execute(request);
     }
 
     @Test
