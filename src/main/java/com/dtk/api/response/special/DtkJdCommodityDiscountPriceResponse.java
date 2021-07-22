@@ -22,7 +22,7 @@ public class DtkJdCommodityDiscountPriceResponse {
     private List<PriceListInfo> priceList;
 
     @Data
-    private static class PriceListInfo {
+    public static class PriceListInfo {
         private String sdate;
         private String sprice;
     }

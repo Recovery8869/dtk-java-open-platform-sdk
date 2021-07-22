@@ -20,7 +20,7 @@ public class DtkBigBrandDiscountResponse {
     private String goScroll;
 
     @Data
-    private static class ListInfo {
+    public static class ListInfo {
         private String cid1;
         private String cid1Name;
         private String cid2;

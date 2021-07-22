@@ -20,7 +20,7 @@ public class DtkTipOffResponse {
     private String pageId;
 
     @Data
-    private static class ListInfo {
+    public static class ListInfo {
         private String itemId;
         private String type;
         private String img;
@@ -36,7 +36,7 @@ public class DtkTipOffResponse {
     }
 
     @Data
-    private static class TimeOption {
+    public static class TimeOption {
         private String label;
         private String value;
     }

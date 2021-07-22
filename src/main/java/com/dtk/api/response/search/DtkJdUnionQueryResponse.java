@@ -21,7 +21,7 @@ public class DtkJdUnionQueryResponse {
     private String pageId;
 
     @Data
-    private static class JdCommodityInfo {
+    public static class JdCommodityInfo {
         private String cid1;
         private String cid1Name;
         private String cid2;
@@ -70,7 +70,7 @@ public class DtkJdUnionQueryResponse {
     }
 
     @Data
-    private static class CouponListInfo {
+    public static class CouponListInfo {
         private String bindType;
         private String discount;
         private String link;

@@ -29,7 +29,7 @@ public class DtkCommodityMaterialsResponse {
     private List<MaterialInfo> materialList;
 
     @Data
-    private static class MaterialInfo {
+    public static class MaterialInfo {
         @ApiModelProperty("素材类型 1.文本 2.图片 3.视频")
         private Integer type;
         @ApiModelProperty("精推素材")

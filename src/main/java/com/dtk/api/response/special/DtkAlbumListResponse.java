@@ -31,7 +31,7 @@ public class DtkAlbumListResponse {
 
 
     @Data
-    private static class GoodsListMessage {
+    public static class GoodsListMessage {
         private String pic;
         private String goodsid;
     }

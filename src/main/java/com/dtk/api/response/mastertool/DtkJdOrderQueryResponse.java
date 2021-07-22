@@ -62,7 +62,7 @@ public class DtkJdOrderQueryResponse {
     private List<CategoryMessage> categoryInfo;
 
     @Data
-    private static class GoodsMessage {
+    public static class GoodsMessage {
         private String imageUrl;
         private String owner;
         private String mainSkuId;
@@ -71,7 +71,7 @@ public class DtkJdOrderQueryResponse {
     }
 
     @Data
-    private static class CategoryMessage {
+    public static class CategoryMessage {
         private String cid1;
         private String cid2;
         private String cid3;

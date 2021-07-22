@@ -25,7 +25,7 @@ public class DtkSingleAlbumCommodityResponse {
     private List<GoodsListInfo2> goodsList;
 
     @Data
-    private static class GoodsListInfo2 {
+    public static class GoodsListInfo2 {
         private String id;
         private String goodsId;
         private String title;

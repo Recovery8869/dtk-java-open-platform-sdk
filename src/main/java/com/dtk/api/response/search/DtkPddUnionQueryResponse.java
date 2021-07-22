@@ -21,7 +21,7 @@ public class DtkPddUnionQueryResponse {
     private String totalCount;
 
     @Data
-    private static class GoodsListInfo {
+    public static class GoodsListInfo {
         private String couponDiscount;
         private String couponEndTime;
         private String couponMinOrderAmount;
