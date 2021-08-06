@@ -125,7 +125,7 @@ class BrandControllerTest {
         request.setJumpType(1);
         request.setPageNo(1);
         request.setOrderScene(1);
-        DtkApiResponse<DtkPageResponse<DtkGetOrderDetailsResponse>> execute = client.execute(request);
+        DtkApiResponse<DtkGetOrderDetailsResponse> execute = client.execute(request);
     }
 
     @Test

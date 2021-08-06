@@ -22,7 +22,7 @@ import java.util.TreeMap;
  */
 @Getter
 @Setter
-public class DtkGetOrderDetailsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetOrderDetailsResponse>>> {
+public class DtkGetOrderDetailsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkGetOrderDetailsResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "1.0.0";
     @RequiredCheck
@@ -64,8 +64,8 @@ public class DtkGetOrderDetailsRequest extends DtkPageParamRequest implements Dt
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkGetOrderDetailsResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkGetOrderDetailsResponse>>>() {
+    public TypeReference<DtkApiResponse<DtkGetOrderDetailsResponse>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkGetOrderDetailsResponse>>() {
         };
     }
 
