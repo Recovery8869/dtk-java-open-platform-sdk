@@ -111,4 +111,6 @@ public class DtkGetOrderDetailsResultsItemsResponse {
     private String tkEarningTime;
     @JsonAlias("special_id")
     private String specialId;
+    @JsonAlias("relation_id")
+    private String relationId;
 }

@@ -3,7 +3,6 @@ package com.dtk.api.request.mastertool;
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkGetOrderDetailsResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
