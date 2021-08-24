@@ -27,7 +27,7 @@ public class DtkListSuperGoodsResponse extends DtkBaseItemResponse {
     @ApiModelProperty(value = "预估淘礼金")
     private BigDecimal estimateAmount;
     @ApiModelProperty(value = "商品信息-商品小图列表(2021/15新增字段)")
-    private String smallImages;
+    private List<String> smallImages;
     @ApiModelProperty(value = "特色文案（2021/6/25新增字段）")
     private List<String> specialText;
     private List<BrandInfo> brandList;

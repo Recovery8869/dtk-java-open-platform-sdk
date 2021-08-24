@@ -54,4 +54,5 @@ public class DtkJdCommodityDetailsResponse {
     private String productIntro;
     private List<String> detailImages;
     private List<String> smallImages;
+    private Integer lowest;
 }

@@ -352,4 +352,14 @@ public class DtkGoodsDetailsResponse {
      * 二级分类集合
      */
     private List<Integer> subcid;
+
+    /**
+     * 24小时销量
+     */
+    private Integer sales24h;
+
+    /**
+     * 是否近30天历史最低价，0-否；1-是
+     */
+    private Integer lowest;
 }

@@ -1,6 +1,7 @@
 package com.dtk.api.controller;
 
 import com.dtk.api.client.DtkApiClient;
+import com.dtk.api.request.putstorage.DtkPddGoodsDetailsRequest;
 import com.dtk.api.request.special.*;
 import com.dtk.api.request.special.subranking.*;
 import com.dtk.api.response.DtkSingleAlbumCommodityResponse;
@@ -8,6 +9,7 @@ import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkDiffPageResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.putstorage.DtkBaseItemResponse;
+import com.dtk.api.response.putstorage.DtkPddGoodsDetailsResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
 import com.dtk.api.response.special.*;
 import com.dtk.api.response.special.subranking.*;
@@ -468,6 +470,17 @@ class SpecialControllerTest {
         request.setTopicId(21);
         request.setPageSize(20);
         DtkApiResponse<DtkPageResponse<DtkBaseItemResponse>> execute = client.execute(request);
+    }
+
+    @Test
+        //专题商品请求参数实体
+    void dtkPddGoodsDetailsRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkPddGoodsDetailsRequest request = new DtkPddGoodsDetailsRequest();
+        request.setGoodsSign("1");
+        request.setSearchId(1);
+        request.setGoodsImgType(0);
+        DtkApiResponse<DtkPddGoodsDetailsResponse> execute = client.execute(request);
     }
 
 }
