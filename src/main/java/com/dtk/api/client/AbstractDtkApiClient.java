@@ -95,7 +95,7 @@ public abstract class AbstractDtkApiClient implements DtkClient {
         textParams.put(DtkApiConstant.RequestCommonParam.APP_KEY, appKey);
         // 生成签名
         String urlParams =
-                textParams.entrySet().stream().map(entry -> entry.getKey() + "=" + entry.getValue()).collect(Collectors.joining(
+                textParams.entrySet().stream().filter(x -> !StringUtils.isEmpty(x.getValue())).map(entry -> entry.getKey() + "=" + entry.getValue()).collect(Collectors.joining(
                         "&"));
         String serverSign = SignMd5Util.sign(urlParams, appSecret);
         textParams.put(DtkApiConstant.RequestCommonParam.SIGN, serverSign);
