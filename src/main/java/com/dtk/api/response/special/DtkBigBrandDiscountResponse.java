@@ -63,6 +63,15 @@ public class DtkBigBrandDiscountResponse {
         private List<String> smallImages;
         private List<String> detailImages;
         private List<String> videoUrlList;
-        private List<String> promotionLabelList;
+        private List<PromotionLabelListVO> promotionLabelList;
+    }
+
+    @Data
+    public static class PromotionLabelListVO {
+        private String labelName;
+        private String promotionLabel;
+        private String promotionLabelId;
+        private String startTime;
+        private String endTime;
     }
 }
