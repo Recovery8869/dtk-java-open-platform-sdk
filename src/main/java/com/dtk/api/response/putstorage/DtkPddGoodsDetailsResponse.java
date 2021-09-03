@@ -17,7 +17,7 @@ public class DtkPddGoodsDetailsResponse {
     private Integer categoryId;
     private String categoryName;
     private List<String> goodsGalleryUrls;
-    private Integer goodsId;
+    private Long goodsId;
     private List<String> catIds;
     private BigDecimal couponDiscount;
     private String couponEndTime;
@@ -31,8 +31,8 @@ public class DtkPddGoodsDetailsResponse {
     private String goodsName;
     private String goodsSign;
     private String goodsThumbnailUrl;
-    private Integer hasCoupon;
-    private Integer hasMallCoupon;
+    private Boolean hasCoupon;
+    private Boolean hasMallCoupon;
     private String lgstTxt;
     private Integer mallCouponDiscountPct;
     private String mallCouponEndTime;
@@ -47,7 +47,7 @@ public class DtkPddGoodsDetailsResponse {
     private Integer merchantType;
     private BigDecimal minGroupPrice;
     private BigDecimal minNormalPrice;
-    private Integer onlySceneAuth;
+    private Boolean onlySceneAuth;
     private Integer optId;
     private List<Integer> optIds;
     private String optName;
