@@ -338,4 +338,13 @@ class BrandControllerTest {
         request.setExternal_id("0");
         DtkApiResponse<DtkTwdToTwdResponse> execute = client.execute(request);
     }
+
+    @Test
+        //剪切板识别请求参数实体
+    void ShearPlateDistinguishRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        ShearPlateDistinguishRequest request = new ShearPlateDistinguishRequest();
+        request.setContent("xxxxxxxxxxx");
+        DtkApiResponse<ShearPlateDistinguishResponse> execute = client.execute(request);
+    }
 }

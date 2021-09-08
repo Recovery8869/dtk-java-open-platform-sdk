@@ -205,6 +205,7 @@ public class WebUtils {
         conn.setRequestProperty("Accept", "text/plain,text/xml,text/javascript,text/html,application/json");
         conn.setRequestProperty("User-Agent", "aop-sdk-java");
         conn.setRequestProperty("Content-Type", ctype);
+        conn.setRequestProperty("Client-Sdk-Type","java");
         return conn;
     }
 
