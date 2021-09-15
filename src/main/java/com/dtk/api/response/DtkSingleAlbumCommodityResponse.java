@@ -30,7 +30,7 @@ public class DtkSingleAlbumCommodityResponse {
         private String goodsId;
         private String title;
         private String mainPic;
-        private String specialText;
+        private List<String> specialText;
         private String originPrice;
         private String actualPrice;
         private String activityType;

@@ -362,4 +362,6 @@ public class DtkGoodsDetailsResponse {
      * 是否近30天历史最低价，0-否；1-是
      */
     private Integer lowest;
+
+    private String couponId;
 }
