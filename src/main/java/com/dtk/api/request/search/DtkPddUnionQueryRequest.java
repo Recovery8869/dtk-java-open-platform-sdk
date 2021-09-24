@@ -5,6 +5,7 @@ import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.search.DtkPddUnionQueryResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -52,6 +53,8 @@ public class DtkPddUnionQueryRequest implements DtkApiRequest<DtkApiResponse<Dtk
     private Integer sortType;
     @ApiModelProperty("是否只返回优惠券的商品，0返回所有商品，1只返回有优惠券的商品")
     private Integer withCoupon;
+    @ApiModelProperty("是否返回分类信息数据 0-否；1-是")
+    private Integer withCategoryInfo;
 
     @ApiModelProperty("拼多多联盟搜索请求path")
     private final String requestPath = "/dels/pdd/goods/search";

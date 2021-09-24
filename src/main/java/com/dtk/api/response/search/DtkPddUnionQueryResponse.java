@@ -65,5 +65,6 @@ public class DtkPddUnionQueryResponse {
         private List<String> activityTags;
         private List<String> catIds;
         private List<String> optIds;
+        private List<String> categories;
     }
 }

@@ -1,8 +1,14 @@
 package com.dtk.api;
 
+import com.dtk.api.client.DtkApiClient;
+import com.dtk.api.controller.AppKeyConstant;
+import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
+import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
+import com.dtk.api.response.search.DtkJdGoodsTypeResponse;
+import com.dtk.api.response.search.DtkPddGoodsTypeResponse;
 import com.dtk.api.response.special.*;
 import com.dtk.api.utils.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -105,5 +111,26 @@ class DtkJavaOpenPlatformSdkApplicationTests {
                 javaTypePage);
         Object o = JsonUtil.jsonToPojoByJavaType(x, javaType);
         System.out.println("test end");
+    }
+
+    @Test
+    // 京东商品类目
+    void DtkJdGoodsTypeRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkJdGoodsTypeRequest request = new DtkJdGoodsTypeRequest();
+        request.setVersion("v1.0.0");
+        request.setParentId("654");
+        request.setLevel("2");
+        DtkApiResponse<List<DtkJdGoodsTypeResponse>> execute = client.execute(request);
+    }
+
+    @Test
+    // 拼多多商品类目
+    void DtkPddGoodsTypeRequest() {
+        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
+        DtkPddGoodsTypeRequest request = new DtkPddGoodsTypeRequest();
+        request.setVersion("v1.0.0");
+        request.setParentId("6630");
+        DtkApiResponse<List<DtkPddGoodsTypeResponse>> execute = client.execute(request);
     }
 }

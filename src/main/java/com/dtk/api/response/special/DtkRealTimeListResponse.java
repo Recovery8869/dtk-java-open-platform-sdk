@@ -29,7 +29,7 @@ public class DtkRealTimeListResponse {
     private String isFreeShipping;
     private String isFlagship;
     private String isSeckill;
-    private String inOrderCount;
+    private String inOrderCount30Days;
     private String isOwner;
     private String comments;
     private String goodsCommentShare;

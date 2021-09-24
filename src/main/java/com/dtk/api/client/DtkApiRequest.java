@@ -45,4 +45,5 @@ public interface DtkApiRequest<T> {
      */
     String requestUrl();
 
+    void setVersion(String s);
 }
