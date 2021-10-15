@@ -3,7 +3,6 @@ package com.dtk.api.request.mastertool;
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.mastertool.DtkJdOrderQueryResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
@@ -23,7 +22,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>> {
+public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<List<DtkJdOrderQueryResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "1.0.0";
     @RequiredCheck
@@ -58,8 +57,8 @@ public class DtkJdOrderQueryRequest extends DtkPageParamRequest implements DtkAp
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>>>() {
+    public TypeReference<DtkApiResponse<List<DtkJdOrderQueryResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<List<DtkJdOrderQueryResponse>>>() {
         };
     }
 

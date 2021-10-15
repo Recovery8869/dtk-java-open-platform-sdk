@@ -241,7 +241,7 @@ class BrandControllerTest {
         request.setPageSize(100);
         request.setChildUnionId("0");
         request.setFields("goodsInfo");
-        DtkApiResponse<DtkPageResponse<List<DtkJdOrderQueryResponse>>> execute = client.execute(request);
+        DtkApiResponse<List<DtkJdOrderQueryResponse>> execute = client.execute(request);
     }
 
     @Test
