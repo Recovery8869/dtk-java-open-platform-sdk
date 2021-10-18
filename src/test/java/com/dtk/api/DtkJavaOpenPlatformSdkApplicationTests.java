@@ -2,10 +2,12 @@ package com.dtk.api;
 
 import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.controller.AppKeyConstant;
+import com.dtk.api.request.mastertool.DtkJdOrderQueryRequest;
 import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
 import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
+import com.dtk.api.response.mastertool.DtkJdOrderQueryResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
 import com.dtk.api.response.search.DtkJdGoodsTypeResponse;
 import com.dtk.api.response.search.DtkPddGoodsTypeResponse;
@@ -132,5 +134,23 @@ class DtkJavaOpenPlatformSdkApplicationTests {
         request.setVersion("v1.0.0");
         request.setParentId("6630");
         DtkApiResponse<List<DtkPddGoodsTypeResponse>> execute = client.execute(request);
+    }
+
+    @Test
+    void DtkJdOrderSearchRequest() {
+        DtkApiClient client =
+                DtkApiClient.getInstance("6124f5234d2f1", "f8a0c3d992001c84dd9770380269662c");
+        DtkJdOrderQueryRequest request = new DtkJdOrderQueryRequest();
+        request.setType("1");
+// request.setKey(dataokeConfigProperties.getJdKey());
+        request.setKey(
+                "3a1d4d464bde27232688545ad568e4f62daf62be413025c8f2a9689279210cf6ee6a8180450d3c64");
+        request.setStartTime("2021-10-08 11:40:00");
+        request.setEndTime("2021-10-08 12:00:00");
+        request.setPageNo(1);
+        request.setPageSize(10);
+
+        DtkApiResponse<List<DtkJdOrderQueryResponse>> response = client.execute(request);
+        System.out.println(JsonUtil.objectToJson(response));
     }
 }
