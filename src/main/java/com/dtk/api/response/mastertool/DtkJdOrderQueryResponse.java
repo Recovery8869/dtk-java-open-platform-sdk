@@ -58,8 +58,8 @@ public class DtkJdOrderQueryResponse {
     private String balanceExt;
     private String proPriceAmount;
     private String rid;
-    private List<GoodsMessage> goodsInfo;
-    private List<CategoryMessage> categoryInfo;
+    private GoodsMessage goodsInfo;
+    private CategoryMessage categoryInfo;
 
     @Data
     public static class GoodsMessage {
