@@ -31,6 +31,16 @@ public class DtkListSuperGoodsResponse extends DtkBaseItemResponse {
     @ApiModelProperty(value = "特色文案（2021/6/25新增字段）")
     private List<String> specialText;
     private List<BrandInfo> brandList;
+    @ApiModelProperty(value = "1.购物津贴；2.跨店满减；0.无")
+    private Integer discountType;
+    @ApiModelProperty(value = "活动满减的满值")
+    private BigDecimal discountFull;
+    @ApiModelProperty(value = "活动满减的减值")
+    private BigDecimal discountCut;
+    @ApiModelProperty(value = "后台配置的活动id")
+    private List<Integer> marketGroup;
+    @ApiModelProperty(value = "活动信息")
+    private List<Activity> activityInfo;
 
     @Data
     public static class BrandInfo {
@@ -39,4 +49,9 @@ public class DtkListSuperGoodsResponse extends DtkBaseItemResponse {
         private Integer brandName;
     }
 
+    @Data
+    public static class Activity {
+        private Integer activityId;
+        private String activityName;
+    }
 }
