@@ -25,7 +25,7 @@ import java.util.Map;
 public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGoodsListItemResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.2.4")
     private String version = "v1.2.4";
-    @ApiModelProperty(value = "排序方式：默认为0，0-综合排序，1-商品上架时间从高到低，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
+    @ApiModelProperty(value = "排序方式：默认为0，0-综合排序，1-商品上架时间从高到低，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高，7-券金额从高到底")
     private String sort;
     @ApiModelProperty(value = "大淘客的一级分类id，如果需要传多个，以英文逗号相隔，如：”1,2,3”。当一级类目id和二级类目id同时传入时，会自动忽略二级类目id")
     private String cids;
@@ -69,6 +69,12 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     private Integer directCommissionType;
     @ApiModelProperty(value = "是否为精选商品，默认全部，1-精选商品（3.19新增字段）")
     private Integer choice;
+    @ApiModelProperty(value = "1-官方旗舰店商品，0-不限是否是旗舰店，不填默认为0")
+    private Integer flagShipStore;
+    @ApiModelProperty(value = "1-30天新品，0-不限，不填默认为0（新品与最低价不能同时选，否则无商")
+    private Integer isNew;
+    @ApiModelProperty(value = "1-30天最低价，0-不限，不填默认为0（新品与最低价不能同时选，否则无商品）")
+    private BigDecimal lowestPrice;
     @ApiModelProperty("商品列表请求path")
     private final String requestPath = "/goods/get-goods-list";
 

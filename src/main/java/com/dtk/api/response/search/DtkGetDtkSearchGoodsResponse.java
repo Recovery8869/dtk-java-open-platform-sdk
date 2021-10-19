@@ -29,12 +29,27 @@ public class DtkGetDtkSearchGoodsResponse extends DtkBaseItemResponse {
     @ApiModelProperty(value = "偏远地区包邮，1-包邮，0-否")
     private Integer freeshipRemoteDistrict;
     private List<BrandInfo> brandList;
-
+    @ApiModelProperty(value = "1.购物津贴；2.跨店满减；0.无")
+    private Integer discountType;
+    @ApiModelProperty(value = "活动满减的满值")
+    private BigDecimal discountFull;
+    @ApiModelProperty(value = "活动满减的减值")
+    private BigDecimal discountCut;
+    @ApiModelProperty(value = "后台配置的活动id")
+    private List<Integer> marketGroup;
+    @ApiModelProperty(value = "活动信息")
+    private List<Activity> activityInfo;
 
     @Data
     public static class BrandInfo {
         private Integer brandId;
         private Integer brandLogo;
         private Integer brandName;
+    }
+
+    @Data
+    public static class Activity{
+        private Integer activityId;
+        private String activityName;
     }
 }
