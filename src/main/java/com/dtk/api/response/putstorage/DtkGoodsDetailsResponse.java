@@ -1,6 +1,8 @@
 package com.dtk.api.response.putstorage;
 
 import com.fasterxml.jackson.annotation.*;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
