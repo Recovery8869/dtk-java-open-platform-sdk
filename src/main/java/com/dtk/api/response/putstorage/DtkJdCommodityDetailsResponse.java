@@ -55,4 +55,5 @@ public class DtkJdCommodityDetailsResponse {
     private List<String> detailImages;
     private List<String> smallImages;
     private Integer lowest;
+    private Long inOrderCount30Days;
 }
