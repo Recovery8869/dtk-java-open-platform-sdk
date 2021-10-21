@@ -1,5 +1,6 @@
 package com.dtk.api.response.special;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -55,6 +56,21 @@ public class DtkRealTimeListResponse {
     private List<String> smallImages;
     private List<String> detailImages;
     private List<String> videoUrlList;
-    private List<String> promotionLabelList;
+    private List<PromotionLabel> promotionLabelList;
+
+    @Data
+    public static class PromotionLabel {
+
+        private String promotionLabelId;
+
+        private String labelName;
+
+        private String promotionLabel;
+
+        private String startTime;
+
+        private String endTime;
+    }
+    
 
 }
