@@ -2,15 +2,16 @@ package com.dtk.api;
 
 import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.controller.AppKeyConstant;
-import com.dtk.api.request.putstorage.DtkGoodsDetailsRequest;
-import com.dtk.api.request.putstorage.DtkGoodsListRequest;
-import com.dtk.api.request.search.*;
-import com.dtk.api.request.special.DtkActivityGoodsListRequest;
+import com.dtk.api.request.mastertool.DtkJdOrderQueryRequest;
+import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
+import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
+import com.dtk.api.request.special.DtkRealTimeListRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
-import com.dtk.api.response.putstorage.DtkGoodsDetailsResponse;
-import com.dtk.api.response.putstorage.DtkGoodsListItemResponse;
-import com.dtk.api.response.search.*;
+import com.dtk.api.response.mastertool.DtkJdOrderQueryResponse;
+import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
+import com.dtk.api.response.search.DtkJdGoodsTypeResponse;
+import com.dtk.api.response.search.DtkPddGoodsTypeResponse;
 import com.dtk.api.response.special.*;
 import com.dtk.api.utils.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -137,133 +138,31 @@ class DtkJavaOpenPlatformSdkApplicationTests {
     }
 
     @Test
-    // 商品列表
-    void DtkGoodsListRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkGoodsListRequest request = new DtkGoodsListRequest();
-        request.setPageId("10");
-        request.setPageSize(100);
-        request.setCids("1,2,3");
-        request.setSort("0");
-        request.setSubcid(1);
-        request.setSpecialId(1);
-        request.setJuHuaSuan(1);
-        request.setTaoQiangGou(0);
-        request.setTmall(1);
-        request.setTchaoshi(1);
-        request.setGoldSeller(1);
-        request.setHaitao(1);
-        request.setPre(1);
-        request.setPreSale(0);
-        request.setBrand(0);
-        request.setBrandIds("362150325");
-        request.setPriceLowerLimit(BigDecimal.ONE);
-        request.setPriceUpperLimit(BigDecimal.TEN);
-        request.setCouponPriceLowerLimit(BigDecimal.ONE);
-        request.setCommissionRateLowerLimit(BigDecimal.ONE);
-        request.setMonthSalesLowerLimit(BigDecimal.ONE);
-        request.setFreeshipRemoteDistrict(1);
-        request.setDirectCommissionType(0);
-        request.setChoice(1);
-        request.setFlagShipStore(1);
-        request.setIsNew(1);
-        request.setLowestPrice(BigDecimal.ONE);
-        DtkApiResponse<DtkPageResponse<DtkGoodsListItemResponse>> execute = client.execute(request);
+    void DtkJdOrderSearchRequest() {
+        DtkApiClient client =
+                DtkApiClient.getInstance("6124f5234d2f1", "f8a0c3d992001c84dd9770380269662c");
+        DtkJdOrderQueryRequest request = new DtkJdOrderQueryRequest();
+        request.setType("1");
+// request.setKey(dataokeConfigProperties.getJdKey());
+        request.setKey(
+                "3a1d4d464bde27232688545ad568e4f62daf62be413025c8f2a9689279210cf6ee6a8180450d3c64");
+        request.setStartTime("2021-10-08 11:40:00");
+        request.setEndTime("2021-10-08 12:00:00");
+        request.setPageNo(1);
+        request.setPageSize(10);
+
+        DtkApiResponse<List<DtkJdOrderQueryResponse>> response = client.execute(request);
+        System.out.println(JsonUtil.objectToJson(response));
     }
 
     @Test
-    // 单品详情
-    void DtkGoodsDetailsRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkGoodsDetailsRequest request = new DtkGoodsDetailsRequest();
-        request.setId(36005006);
-        request.setGoodsId("642739867031");
-        DtkApiResponse<DtkGoodsDetailsResponse> execute = client.execute(request);
-    }
-
-    @Test
-    // 大淘客搜索
-    void DtkGetDtkSearchGoodsRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkGetDtkSearchGoodsRequest request = new DtkGetDtkSearchGoodsRequest();
-        request.setPageId("1");
-        request.setKeyWords("男装");
-        request.setCids("1");
-        request.setSubcid(1);
-        request.setJuHuaSuan(0);
-        request.setTaoQiangGou(0);
-        request.setTmall(0);
-        request.setTchaoshi(0);
-        request.setGoldSeller(0);
-        request.setHaitao(0);
-        request.setBrand(0);
-        request.setBrandIds("218756504");
-        request.setPriceLowerLimit(BigDecimal.ONE);
-        request.setPriceUpperLimit(BigDecimal.TEN);
-        request.setCouponPriceLowerLimit(BigDecimal.ONE);
-        request.setCommissionRateLowerLimit(BigDecimal.ONE);
-        request.setMonthSalesLowerLimit(BigDecimal.TEN);
-        request.setSort("0");
-        request.setFreeshipRemoteDistrict(1);
-        DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>> execute = client.execute(request);
-    }
-
-    // 超级搜索
-    @Test
-    void DtkListSuperGoodsRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkListSuperGoodsRequest request = new DtkListSuperGoodsRequest();
-        request.setType(1);
+    void DtkJdRankRealTimeRequest() {
+        DtkApiClient client =
+                DtkApiClient.getInstance("6124f5234d2f1", "f8a0c3d992001c84dd9770380269662c");
+        DtkRealTimeListRequest request = new DtkRealTimeListRequest();
         request.setPageId("1");
         request.setPageSize(20);
-        request.setKeyWords("男装");
-        request.setTmall(1);
-        request.setHaitao(1);
-        request.setSort("price");
-        request.setSpecialId("0");
-        request.setChannelId("0");
-        request.setPriceLowerLimit("10");
-        request.setPriceUpperLimit("100");
-        request.setEndTkRate("100");
-        request.setStartTkRate("10");
-        request.setHasCoupon("1");
-        DtkApiResponse<DtkPageResponse<DtkListSuperGoodsResponse>> execute = client.execute(request);
-    }
-
-    // 拼多多联盟搜索
-    @Test
-    void DtkPddUnionQueryRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkPddUnionQueryRequest request = new DtkPddUnionQueryRequest();
-        request.setActivityTags("4");
-        request.setBlockCats("1");
-        request.setBlockCatPackages("1");
-        request.setCatId(1);
-        request.setGoodsSignList("");
-        request.setIsBrandGoods(0);
-        request.setKeyword("男装");
-        request.setListId("0");
-        request.setMerchantTypeList("3");
-        request.setOptId(1);
-        request.setPage(100);
-        request.setRangeList("[{range_id:0,range_from:1,range_to:1500}, {range_id:1,range_from:1,range_to:1500}]");
-        request.setSortType(0);
-        request.setWithCoupon(1);
-        request.setWithCategoryInfo(0);
-        DtkApiResponse<DtkPddUnionQueryResponse> execute = client.execute(request);
-    }
-
-    // 活动商品
-    @Test
-    void DtkActivityGoodsListRequest() {
-        DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
-        DtkActivityGoodsListRequest request = new DtkActivityGoodsListRequest();
-        request.setPageId("1");
-        request.setActivityId(98);
-        request.setPageSize(100);
-        request.setCid(1);
-        request.setSubcid(1);
-        request.setFreeshipRemoteDistrict(1);
-        DtkApiResponse<DtkPageResponse<DtkActivityGoodsListResponse>> execute = client.execute(request);
+        DtkApiResponse<DtkPageResponse<DtkRealTimeListResponse>> response = client.execute(request);
+        System.out.println(JsonUtil.objectToJson(response));
     }
 }
