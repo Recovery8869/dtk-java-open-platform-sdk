@@ -4,6 +4,7 @@ import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
+import com.dtk.api.response.base.DtkSearchPageResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse1;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
@@ -23,7 +24,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>> {
+public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements DtkApiRequest<DtkApiResponse<DtkSearchPageResponse<DtkGetDtkSearchGoodsResponse1>>> {
     @ApiModelProperty(value = "版本号", example = "v2.1.2")
     private String version = "v2.1.2";
     @RequiredCheck
@@ -77,8 +78,8 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>>>() {
+    public TypeReference<DtkApiResponse<DtkSearchPageResponse<DtkGetDtkSearchGoodsResponse1>>> responseType() {
+        return new TypeReference<DtkApiResponse<DtkSearchPageResponse<DtkGetDtkSearchGoodsResponse1>>>() {
         };
     }
 

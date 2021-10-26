@@ -17,8 +17,7 @@ public class DtkGetHalfPriceDayPriceItemResponse {
     private Integer top;
     private Integer hdLeixing;
     private Integer qiangNum;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updateTime;
+    private String updateTime;
     private Integer id;
     private Integer itemSoldNum;
     private String todaySellNum;
@@ -29,12 +28,10 @@ public class DtkGetHalfPriceDayPriceItemResponse {
     private String yijuhua;
     private String preferential;
     private BigDecimal couponAmount;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date startTime;
+    private String startTime;
     private Long activityId;
     private Integer restCount;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date serverTime;
+    private String serverTime;
     private Integer tmall;
     private Integer activityType;
     private Integer useQuan;

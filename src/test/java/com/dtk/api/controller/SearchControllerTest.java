@@ -4,6 +4,7 @@ import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.request.search.*;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
+import com.dtk.api.response.base.DtkSearchPageResponse;
 import com.dtk.api.response.search.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,7 +46,7 @@ class SearchControllerTest {
         request.setMonthSalesLowerLimit(BigDecimal.TEN);
         request.setSort("0");
         request.setFreeshipRemoteDistrict(1);
-        DtkApiResponse<DtkPageResponse<DtkGetDtkSearchGoodsResponse1>> execute = client.execute(request);
+        DtkApiResponse<DtkSearchPageResponse<DtkGetDtkSearchGoodsResponse1>> execute = client.execute(request);
     }
 
     @Test

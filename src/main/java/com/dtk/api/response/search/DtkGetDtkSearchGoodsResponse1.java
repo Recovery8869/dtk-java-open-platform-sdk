@@ -122,7 +122,6 @@ public class DtkGetDtkSearchGoodsResponse1 {
     private BigDecimal estimateAmount;
     private Integer freeshipRemoteDistrict;
     private String shopLogo;
-    private List<BrandInfo> brandList;
     @ApiModelProperty(value = "1.购物津贴；2.跨店满减；0.无")
     private Integer discountType;
     @ApiModelProperty(value = "活动满减的满值")
@@ -133,13 +132,6 @@ public class DtkGetDtkSearchGoodsResponse1 {
     private List<Integer> marketGroup;
     @ApiModelProperty(value = "活动信息")
     private List<DtkGetDtkSearchGoodsResponse.Activity> activityInfo;
-
-    @Data
-    public static class BrandInfo {
-        private Integer brandId;
-        private Integer brandLogo;
-        private Integer brandName;
-    }
 
     @Data
     public static class Activity{

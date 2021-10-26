@@ -3,13 +3,16 @@ package com.dtk.api;
 import com.dtk.api.client.DtkApiClient;
 import com.dtk.api.controller.AppKeyConstant;
 import com.dtk.api.request.mastertool.DtkJdOrderQueryRequest;
+import com.dtk.api.request.search.DtkGetDtkSearchGoodsRequest;
 import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
 import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
 import com.dtk.api.request.special.DtkRealTimeListRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
+import com.dtk.api.response.base.DtkSearchPageResponse;
 import com.dtk.api.response.mastertool.DtkJdOrderQueryResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
+import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse1;
 import com.dtk.api.response.search.DtkJdGoodsTypeResponse;
 import com.dtk.api.response.search.DtkPddGoodsTypeResponse;
 import com.dtk.api.response.special.*;
@@ -159,10 +162,11 @@ class DtkJavaOpenPlatformSdkApplicationTests {
     void DtkJdRankRealTimeRequest() {
         DtkApiClient client =
                 DtkApiClient.getInstance("6124f5234d2f1", "f8a0c3d992001c84dd9770380269662c");
-        DtkRealTimeListRequest request = new DtkRealTimeListRequest();
+        DtkGetDtkSearchGoodsRequest request = new DtkGetDtkSearchGoodsRequest();
         request.setPageId("1");
         request.setPageSize(20);
-        DtkApiResponse<DtkPageResponse<DtkRealTimeListResponse>> response = client.execute(request);
+        request.setKeyWords("口罩");
+        DtkApiResponse<DtkSearchPageResponse<DtkGetDtkSearchGoodsResponse1>> response = client.execute(request);
         System.out.println(JsonUtil.objectToJson(response));
     }
 }
