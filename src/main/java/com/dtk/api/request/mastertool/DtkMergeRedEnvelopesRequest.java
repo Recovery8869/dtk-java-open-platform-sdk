@@ -28,7 +28,6 @@ public class DtkMergeRedEnvelopesRequest implements DtkApiRequest<DtkApiResponse
     private Integer merchantType;
     @ApiModelProperty(value = "推广位ID（大淘客账号下已授权淘宝账号的任一pid，若未填写，则默认使用创建应用时绑定的pid；其中京东pid为联盟子推客身份标识（不能传入接口调用者自己的pid）")
     private String pid;
-    @RequiredCheck
     @ApiModelProperty(value = "选择京东红包时需要填入京东联盟ID（在京东联盟后台个人中心）。其他类型不用传", required = true)
     private String unionId;
     @ApiModelProperty("三合一红包请求path")
