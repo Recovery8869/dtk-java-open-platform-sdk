@@ -53,4 +53,8 @@ public class DtkDdqGoodsListItemResponse {
     private Integer yunfeixian;
     private BigDecimal estimateAmount;
     private String marketingMainPic;
+    private Integer tchaosi;
+    private Integer haitao;
+    private Integer shoptype;
+    private String specialText;
 }

@@ -30,4 +30,7 @@ public class DtkOpGoodsListResponse extends DtkBaseItemResponse {
     private Integer freeshipRemoteDistrict;
     @ApiModelProperty(value = "商品视频")
     private String video;
+    private Integer tchaosi;
+    private Integer haitao;
+    private String specialText;
 }

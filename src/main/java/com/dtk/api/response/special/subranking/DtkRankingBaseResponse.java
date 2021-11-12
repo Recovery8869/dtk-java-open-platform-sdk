@@ -40,4 +40,6 @@ public class DtkRankingBaseResponse {
     private BigDecimal hzQuanOver;
     private Integer yunfeixian;
     private Integer freeshipRemoteDistrict;
+    private Integer haitao;
+    private String specialText;
 }

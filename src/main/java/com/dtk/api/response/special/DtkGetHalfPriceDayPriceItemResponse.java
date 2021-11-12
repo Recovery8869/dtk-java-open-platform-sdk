@@ -1,10 +1,8 @@
 package com.dtk.api.response.special;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * 每日半价响应结果价格数据项实体
@@ -36,4 +34,7 @@ public class DtkGetHalfPriceDayPriceItemResponse {
     private Integer activityType;
     private Integer useQuan;
     private Integer isMamaQuan;
+    private Integer shopType;
+    private Integer tchaosi;
+    private Integer haitao;
 }

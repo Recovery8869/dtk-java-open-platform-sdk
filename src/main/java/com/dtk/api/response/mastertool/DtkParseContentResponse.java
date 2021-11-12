@@ -20,4 +20,8 @@ public class DtkParseContentResponse {
     private String commissionType;
     private BigDecimal commissionRate;
     private DtkParseContentOriginInfoResponse originInfo;
+    private String itemId;
+    private String itemName;
+    private String mainPic;
+    private String dataType;
 }
