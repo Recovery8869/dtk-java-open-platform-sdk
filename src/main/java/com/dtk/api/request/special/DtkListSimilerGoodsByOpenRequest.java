@@ -2,7 +2,6 @@ package com.dtk.api.request.special;
 
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.special.DtkListSimilerGoodsByOpenResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.dtk.api.utils.RequiredCheck;
@@ -11,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>> {
+public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>> {
     @ApiModelProperty(value = "版本号", example = "v1.2.2")
     private String version = "v1.2.2";
     @RequiredCheck
@@ -43,8 +43,8 @@ public class DtkListSimilerGoodsByOpenRequest implements DtkApiRequest<DtkApiRes
     }
 
     @Override
-    public TypeReference<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>> responseType() {
-        return new TypeReference<DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>>>() {
+    public TypeReference<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>> responseType() {
+        return new TypeReference<DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>>>() {
         };
     }
 

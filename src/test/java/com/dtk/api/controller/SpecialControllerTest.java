@@ -338,9 +338,9 @@ class SpecialControllerTest {
     void dtkListSimilerGoodsByOpenRequest() {
         DtkApiClient client = DtkApiClient.getInstance(AppKeyConstant.appKey, AppKeyConstant.appSecret);
         DtkListSimilerGoodsByOpenRequest request = new DtkListSimilerGoodsByOpenRequest();
-        request.setId(34634133);
+        request.setId(36433252);
         request.setSize(10);
-        DtkApiResponse<DtkPageResponse<DtkListSimilerGoodsByOpenResponse>> execute = client.execute(request);
+        DtkApiResponse<List<DtkListSimilerGoodsByOpenResponse>> execute = client.execute(request);
     }
 
     @Test
