@@ -3,6 +3,7 @@ package com.dtk.api.response.special.subranking;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 各大榜单响应结果基础信息实体
@@ -41,5 +42,5 @@ public class DtkRankingBaseResponse {
     private Integer yunfeixian;
     private Integer freeshipRemoteDistrict;
     private Integer haitao;
-    private String specialText;
+    private List<String> specialText;
 }
