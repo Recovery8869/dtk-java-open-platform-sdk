@@ -6,9 +6,7 @@ import com.dtk.api.request.mastertool.DtkJdOrderQueryRequest;
 import com.dtk.api.request.search.DtkGetDtkSearchGoodsRequest;
 import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
 import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
-import com.dtk.api.request.special.DtkGetRankListRequest;
-import com.dtk.api.request.special.DtkGetRankingListRequest;
-import com.dtk.api.request.special.DtkRealTimeListRequest;
+import com.dtk.api.request.special.*;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.base.DtkSearchPageResponse;
@@ -164,11 +162,11 @@ class DtkJavaOpenPlatformSdkApplicationTests {
     void DtkJdRankRealTimeRequest() {
         DtkApiClient client =
                 DtkApiClient.getInstance("6124f5234d2f1", "f8a0c3d992001c84dd9770380269662c");
-        DtkGetRankingListRequest request = new DtkGetRankingListRequest();
+        DtkOpGoodsListRequest request = new DtkOpGoodsListRequest();
+        request.setNineCid("1");
         request.setPageId("1");
         request.setPageSize(20);
-        request.setRankType(1);
-        DtkApiResponse<List<DtkGetRankingListMergeResponse>> response = client.execute(request);
+        DtkApiResponse<DtkPageResponse<DtkOpGoodsListResponse>> response = client.execute(request);
         System.out.println(JsonUtil.objectToJson(response));
     }
 }

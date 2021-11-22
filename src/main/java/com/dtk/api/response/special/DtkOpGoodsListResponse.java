@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 9.9包邮精选响应结果实体
@@ -32,5 +33,5 @@ public class DtkOpGoodsListResponse extends DtkBaseItemResponse {
     private String video;
     private Integer tchaosi;
     private Integer haitao;
-    private String specialText;
+    private List<String> specialText;
 }
