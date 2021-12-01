@@ -55,6 +55,8 @@ public class DtkPddUnionQueryRequest implements DtkApiRequest<DtkApiResponse<Dtk
     private Integer withCoupon;
     @ApiModelProperty("是否返回分类信息数据 0-否；1-是")
     private Integer withCategoryInfo;
+    @ApiModelProperty("拼多多推广位id（建议填写，可获取对应账号等级的佣金比例）")
+    private String pid;
 
     @ApiModelProperty("拼多多联盟搜索请求path")
     private final String requestPath = "/dels/pdd/goods/search";
