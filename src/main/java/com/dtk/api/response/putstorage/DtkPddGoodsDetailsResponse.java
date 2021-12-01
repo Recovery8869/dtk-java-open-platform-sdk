@@ -52,8 +52,8 @@ public class DtkPddGoodsDetailsResponse {
     private List<Integer> optIds;
     private String optName;
     private Integer planType;
-    private Integer predictPromotionRate;
-    private Integer promotionRate;
+    private BigDecimal predictPromotionRate;
+    private BigDecimal promotionRate;
     private String salesTip;
     private List<Integer> serviceTags;
     private String servTxt;
