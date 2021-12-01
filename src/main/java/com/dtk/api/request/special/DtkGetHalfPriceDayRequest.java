@@ -4,7 +4,6 @@ import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.special.DtkGetHalfPriceDayResponse;
 import com.dtk.api.utils.ObjectUtil;
-import com.dtk.api.utils.RequiredCheck;
 import com.fasterxml.jackson.core.type.TypeReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -23,7 +22,6 @@ import java.util.Map;
 public class DtkGetHalfPriceDayRequest implements DtkApiRequest<DtkApiResponse<DtkGetHalfPriceDayResponse>> {
     @ApiModelProperty(value = "版本号", example = "v1.0.0")
     private String version = "v1.0.0";
-    @RequiredCheck
     @ApiModelProperty(value = "默认为当前场次，场次输入格式，例如02、08、12、13", required = true)
     private String sessions;
     @ApiModelProperty("每日半价请求path")
