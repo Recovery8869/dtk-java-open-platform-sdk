@@ -1,6 +1,7 @@
 package com.dtk.api.response.mastertool;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -113,4 +114,6 @@ public class DtkGetOrderDetailsResultsItemsResponse {
     private String specialId;
     @JsonAlias("relation_id")
     private String relationId;
+    @JsonAlias("modified_time")
+    private String modifiedTime;
 }
