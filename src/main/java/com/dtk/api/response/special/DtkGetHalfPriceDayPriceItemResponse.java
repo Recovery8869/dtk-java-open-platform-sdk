@@ -3,6 +3,7 @@ package com.dtk.api.response.special;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 每日半价响应结果价格数据项实体
@@ -37,4 +38,5 @@ public class DtkGetHalfPriceDayPriceItemResponse {
     private Integer shopType;
     private Integer tchaosi;
     private Integer haitao;
+    private List<Integer> marketGroup;
 }

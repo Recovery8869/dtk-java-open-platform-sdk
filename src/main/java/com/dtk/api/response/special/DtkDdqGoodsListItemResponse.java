@@ -57,4 +57,5 @@ public class DtkDdqGoodsListItemResponse {
     private Integer haitao;
     private Integer shoptype;
     private String specialText;
+    private List<Integer> marketGroup;
 }

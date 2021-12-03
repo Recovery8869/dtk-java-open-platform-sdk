@@ -12,7 +12,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -52,6 +51,8 @@ public class DtkListSuperGoodsRequest extends DtkPageParamRequest implements Dtk
     private String startTkRate;
     @ApiModelProperty(value = "是否有券，1为有券，默认为全部(2021/1/15新增字段)")
     private String hasCoupon;
+    @ApiModelProperty(value = "活动id，多个使用,分隔符。示例：1,2,3")
+    private String activityId;
     @ApiModelProperty("超级搜索请求path")
     private final String requestPath = "/goods/list-super-goods";
 

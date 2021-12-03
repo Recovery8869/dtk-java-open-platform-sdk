@@ -75,6 +75,8 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     private Integer isNew;
     @ApiModelProperty(value = "1-30天最低价，0-不限，不填默认为0（新品与最低价不能同时选，否则无商品）")
     private BigDecimal lowestPrice;
+    @ApiModelProperty(value = "活动id，多个使用,分隔符。示例：1,2,3")
+    private String activityId;
     @ApiModelProperty("商品列表请求path")
     private final String requestPath = "/goods/get-goods-list";
 

@@ -23,4 +23,5 @@ public class DtkSuperDiscountGoodsResponse extends DtkBaseItemResponse {
     private Integer yunfeixian;
     private BigDecimal estimateAmount;
     private Integer freeshipRemoteDistrict;
+    private List<Integer> marketGroup;
 }

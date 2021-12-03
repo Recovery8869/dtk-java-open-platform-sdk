@@ -26,4 +26,11 @@ public class DtkListSimilerGoodsByOpenResponse extends DtkBaseItemResponse {
     private BigDecimal estimateAmount;
     @ApiModelProperty(value = "偏远地区包邮，1-包邮，0-否")
     private Integer freeshipRemoteDistrict;
+    @ApiModelProperty(value = "满减满值")
+    private BigDecimal discountFull;
+    @ApiModelProperty(value = "满减减值")
+    private BigDecimal discountCut;
+    @ApiModelProperty(value = "满减类型-1.购物津贴2.跨店满减")
+    private Integer discountType;
+
 }

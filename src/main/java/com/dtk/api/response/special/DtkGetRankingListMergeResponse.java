@@ -53,4 +53,6 @@ public class DtkGetRankingListMergeResponse extends DtkRankingBaseResponse {
     private Integer lowest;
     private Integer score;
     private Integer searchNum;
+
+    private List<Integer> marketGroup;
 }
