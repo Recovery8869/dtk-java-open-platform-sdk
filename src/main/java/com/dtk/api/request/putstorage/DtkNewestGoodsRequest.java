@@ -63,6 +63,8 @@ public class DtkNewestGoodsRequest extends DtkPageParamRequest implements DtkApi
     private BigDecimal monthSalesLowerLimit;
     @ApiModelProperty(value = "排序字段，默认为0，0-综合排序，1-商品上架时间从新到旧，2-销量从高到低，3-领券量从高到低，4-佣金比例从高到低，5-价格（券后价）从高到低，6-价格（券后价）从低到高")
     private String sort;
+    @ApiModelProperty(value = "商品是否有券（0 - 全部商品，1 - 有券商品，-1 - 无券商品，默认为1）")
+    private Integer hasCoupon;
     @ApiModelProperty("商品更新请求path")
     private final String requestPath = "/goods/get-newest-goods";
 

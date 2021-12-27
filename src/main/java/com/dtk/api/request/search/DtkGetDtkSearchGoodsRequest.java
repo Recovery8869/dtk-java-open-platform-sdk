@@ -3,7 +3,6 @@ package com.dtk.api.request.search;
 import com.dtk.api.client.DtkApiRequest;
 import com.dtk.api.request.base.DtkPageParamRequest;
 import com.dtk.api.response.base.DtkApiResponse;
-import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.base.DtkSearchPageResponse;
 import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse1;
 import com.dtk.api.utils.ObjectUtil;
@@ -64,6 +63,8 @@ public class DtkGetDtkSearchGoodsRequest extends DtkPageParamRequest implements 
     private String sort;
     @ApiModelProperty(value = "偏远地区包邮，1-是，0-非偏远地区，不填默认所有商品")
     private Integer freeshipRemoteDistrict;
+    @ApiModelProperty(value = "商品是否有券（0 - 全部商品，1 - 有券商品，-1 - 无券商品，默认为1）")
+    private Integer hasCoupon;
     @ApiModelProperty("大淘客搜索请求path")
     private final String requestPath = "/goods/get-dtk-search-goods";
 

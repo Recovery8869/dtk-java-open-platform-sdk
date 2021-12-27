@@ -77,6 +77,8 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     private BigDecimal lowestPrice;
     @ApiModelProperty(value = "活动id，多个使用,分隔符。示例：1,2,3")
     private String activityId;
+    @ApiModelProperty(value = "商品是否有券（0 - 全部商品，1 - 有券商品，-1 - 无券商品，默认为1）")
+    private Integer hasCoupon;
     @ApiModelProperty("商品列表请求path")
     private final String requestPath = "/goods/get-goods-list";
 

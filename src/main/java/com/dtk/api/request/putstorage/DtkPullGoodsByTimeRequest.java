@@ -40,6 +40,8 @@ public class DtkPullGoodsByTimeRequest extends DtkPageParamRequest implements Dt
     private Integer freeshipRemoteDistrict;
     @ApiModelProperty(value = "是否为精选商品，默认全部商品，1-精选商品（3.19新增字段）")
     private Integer choice;
+    @ApiModelProperty(value = "商品是否有券（0 - 全部商品，1 - 有券商品，-1 - 无券商品，默认为1）")
+    private Integer hasCoupon;
     @ApiModelProperty("定时拉取请求path")
     private final String requestPath = "/goods/pull-goods-by-time";
 
