@@ -5,7 +5,6 @@ import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.search.DtkPddUnionQueryResponse;
 import com.dtk.api.utils.ObjectUtil;
 import com.fasterxml.jackson.core.type.TypeReference;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -57,7 +56,8 @@ public class DtkPddUnionQueryRequest implements DtkApiRequest<DtkApiResponse<Dtk
     private Integer withCategoryInfo;
     @ApiModelProperty("拼多多推广位id（建议填写，可获取对应账号等级的佣金比例）")
     private String pid;
-
+    @ApiModelProperty("自定义参数，为链接打上自定义标签；自定义参数最长限制64个字节")
+    private String customParameters;
     @ApiModelProperty("拼多多联盟搜索请求path")
     private final String requestPath = "/dels/pdd/goods/search";
 
