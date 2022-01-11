@@ -345,6 +345,12 @@ public class DtkGoodsDetailsResponse {
      */
     private BigDecimal serviceScore;
 
+    @ApiModelProperty(value = "单单有奖活动id")
+    private String activityId;
+
+    @ApiModelProperty(value = "单单有奖金额")
+    private BigDecimal cpaRewardAmount;
+
     /**
      * 服务评分对比
      */

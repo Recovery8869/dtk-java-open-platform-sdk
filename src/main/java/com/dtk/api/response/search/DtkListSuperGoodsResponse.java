@@ -41,6 +41,10 @@ public class DtkListSuperGoodsResponse extends DtkBaseItemResponse {
     private List<Integer> marketGroup;
     @ApiModelProperty(value = "活动信息")
     private List<Activity> activityInfo;
+    @ApiModelProperty(value = "单单有奖活动id")
+    private String activityId;
+    @ApiModelProperty(value = "单单有奖金额")
+    private BigDecimal cpaRewardAmount;
 
     @Data
     public static class BrandInfo {

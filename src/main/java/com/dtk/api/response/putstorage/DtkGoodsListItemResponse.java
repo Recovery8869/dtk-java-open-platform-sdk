@@ -47,6 +47,10 @@ public class DtkGoodsListItemResponse extends DtkBaseItemResponse {
     private BigDecimal discountFull;
     @ApiModelProperty(value = "活动满减的减值")
     private BigDecimal discountCut;
+    @ApiModelProperty(value = "单单有奖活动id")
+    private String activityId;
+    @ApiModelProperty(value = "单单有奖金额")
+    private BigDecimal cpaRewardAmount;
     @ApiModelProperty(value = "后台配置的活动id")
     private List<Integer> marketGroup;
     @ApiModelProperty(value = "活动信息")

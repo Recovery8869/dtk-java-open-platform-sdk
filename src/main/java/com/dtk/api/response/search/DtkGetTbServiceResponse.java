@@ -76,4 +76,8 @@ public class DtkGetTbServiceResponse {
     private BigDecimal presaleDeposit;
     @JsonAlias("presale_discount_fee_text")
     private String presaleDiscountFeeText;
+    @JsonAlias("activity_id")
+    private String activityId;
+    @JsonAlias("cpa_reward_amount")
+    private BigDecimal cpaRewardAmount;
 }
