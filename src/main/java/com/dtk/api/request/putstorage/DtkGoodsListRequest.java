@@ -79,6 +79,8 @@ public class DtkGoodsListRequest extends DtkPageParamRequest implements DtkApiRe
     private String activityId;
     @ApiModelProperty(value = "商品是否有券（0 - 全部商品，1 - 有券商品，-1 - 无券商品，默认为1）")
     private Integer hasCoupon;
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
     @ApiModelProperty("商品列表请求path")
     private final String requestPath = "/goods/get-goods-list";
 

@@ -58,4 +58,5 @@ public class DtkDdqGoodsListItemResponse {
     private Integer shoptype;
     private String specialText;
     private List<Integer> marketGroup;
+    private Integer lowest;
 }

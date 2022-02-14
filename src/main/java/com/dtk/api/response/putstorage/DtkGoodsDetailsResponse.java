@@ -373,6 +373,8 @@ public class DtkGoodsDetailsResponse {
 
     private String couponId;
 
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
     @ApiModelProperty(value = "1.购物津贴；2.跨店满减；0.无")
     private Integer discountType;
     @ApiModelProperty(value = "活动满减的满值")

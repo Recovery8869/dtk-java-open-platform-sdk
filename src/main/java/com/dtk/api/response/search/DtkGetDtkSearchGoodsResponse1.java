@@ -132,6 +132,8 @@ public class DtkGetDtkSearchGoodsResponse1 {
     private List<Integer> marketGroup;
     @ApiModelProperty(value = "活动信息")
     private List<DtkGetDtkSearchGoodsResponse.Activity> activityInfo;
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
 
     @Data
     public static class Activity{

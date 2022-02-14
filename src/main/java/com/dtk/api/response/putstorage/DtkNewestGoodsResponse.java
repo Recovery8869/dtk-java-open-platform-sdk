@@ -52,4 +52,6 @@ public class DtkNewestGoodsResponse {
     private Integer couponRemainCount;
     @ApiModelProperty(value = "特色文案")
     private List<String> specialText;
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
 }

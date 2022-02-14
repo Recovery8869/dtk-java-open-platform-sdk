@@ -35,4 +35,5 @@ public class DtkOpGoodsListResponse extends DtkBaseItemResponse {
     private Integer haitao;
     private List<String> specialText;
     private List<Integer> marketGroup;
+    private Integer lowest;
 }

@@ -61,4 +61,5 @@ public class DtkPddGoodsDetailsResponse {
     private List<String> unifiedTags;
     private List<String> videoUrls;
     private Integer zsDuoId;
+    private Integer salesTipFuzz;
 }

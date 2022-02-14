@@ -45,6 +45,10 @@ public class DtkListSuperGoodsResponse extends DtkBaseItemResponse {
     private String activityId;
     @ApiModelProperty(value = "单单有奖金额")
     private BigDecimal cpaRewardAmount;
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
+    @ApiModelProperty(value = "历史最低价")
+    private BigDecimal lowest;
 
     @Data
     public static class BrandInfo {

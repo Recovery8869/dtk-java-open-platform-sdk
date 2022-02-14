@@ -53,6 +53,8 @@ public class DtkListSuperGoodsRequest extends DtkPageParamRequest implements Dtk
     private String hasCoupon;
     @ApiModelProperty(value = "活动id，多个使用,分隔符。示例：1,2,3")
     private String activityId;
+    @ApiModelProperty(value = "是否已经验货，0-否；1-是")
+    private Integer inspectedGoods;
     @ApiModelProperty("超级搜索请求path")
     private final String requestPath = "/goods/list-super-goods";
 
