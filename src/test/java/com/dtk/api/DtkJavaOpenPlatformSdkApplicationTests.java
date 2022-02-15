@@ -6,15 +6,13 @@ import com.dtk.api.request.mastertool.DtkJdOrderQueryRequest;
 import com.dtk.api.request.search.DtkGetDtkSearchGoodsRequest;
 import com.dtk.api.request.search.DtkJdGoodsTypeRequest;
 import com.dtk.api.request.search.DtkPddGoodsTypeRequest;
+import com.dtk.api.request.search.DtkPddOrderIncrementSearchRequest;
 import com.dtk.api.request.special.*;
 import com.dtk.api.response.base.DtkApiResponse;
 import com.dtk.api.response.base.DtkPageResponse;
 import com.dtk.api.response.base.DtkSearchPageResponse;
 import com.dtk.api.response.mastertool.DtkJdOrderQueryResponse;
-import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse;
-import com.dtk.api.response.search.DtkGetDtkSearchGoodsResponse1;
-import com.dtk.api.response.search.DtkJdGoodsTypeResponse;
-import com.dtk.api.response.search.DtkPddGoodsTypeResponse;
+import com.dtk.api.response.search.*;
 import com.dtk.api.response.special.*;
 import com.dtk.api.utils.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -167,6 +165,19 @@ class DtkJavaOpenPlatformSdkApplicationTests {
         request.setPageId("1");
         request.setPageSize(20);
         DtkApiResponse<DtkPageResponse<DtkOpGoodsListResponse>> response = client.execute(request);
+        System.out.println(JsonUtil.objectToJson(response));
+    }
+
+    @Test
+    void DtkPddOrderSearchTest() {
+        DtkApiClient client =
+                DtkApiClient.getInstance("61088994e1b60", "4c29237d6f59723ef85f2b7facd8205e");
+        DtkPddOrderIncrementSearchRequest request = new DtkPddOrderIncrementSearchRequest();
+        request.setStartUpdateTime("2022-01-21 17:33:01");
+        request.setEndUpdateTime("2022-01-21 19:00:01");
+        request.setPageId("1");
+        request.setPageSize(20);
+        DtkApiResponse<DtkPageResponse<DtkPddOrderIncrementSearchResponse>> response = client.execute(request);
         System.out.println(JsonUtil.objectToJson(response));
     }
 }
